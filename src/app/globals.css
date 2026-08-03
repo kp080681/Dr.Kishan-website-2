@@ -395,12 +395,7 @@ button {
 
 .image-mask img {
   transform-origin: center;
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.image-mask:hover img,
-.image-mask:focus-within img {
-  transform: scale(1.025);
+  transition: none;
 }
 
 .accent-line-motion {
@@ -525,21 +520,18 @@ button {
   }
 
   html.motion-ready .reveal-image[data-animate="true"]:not(.is-visible) {
-    clip-path: inset(0 0 18% 0 round var(--radius));
-    transform: translateY(16px) scale(1.01);
+    transform: translateY(16px);
   }
 
   html.motion-ready .reveal[data-animate="true"] {
     transition:
       opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-      clip-path 820ms cubic-bezier(0.22, 1, 0.36, 1);
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   html.motion-ready .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
-    clip-path: inset(0 0 0 0 round 0);
   }
 
   html.motion-ready .section-head.reveal[data-animate="true"] {
@@ -600,14 +592,6 @@ button {
   html.motion-ready .hero-sequence.reveal.is-visible > :nth-child(8),
   html.motion-ready .reveal.is-visible .hero-sequence > :nth-child(8) {
     transition-delay: 520ms;
-  }
-
-  html.motion-ready .hero-portrait img {
-    transform: scale(1.02);
-  }
-
-  html.motion-ready .hero-portrait.is-visible img {
-    transform: scale(1);
   }
 
   html.motion-ready .accent-line-motion[data-animate="true"]::before,

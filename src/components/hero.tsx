@@ -102,7 +102,7 @@ export function Hero() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 90vw, 42vw"
-                className="object-cover object-[center_18%]"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent" />
             </div>

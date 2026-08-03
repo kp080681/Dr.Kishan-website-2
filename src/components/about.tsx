@@ -14,7 +14,7 @@ export function About() {
                 alt={images.about.alt}
                 fill
                 sizes="(max-width: 1024px) 90vw, 38vw"
-                className="object-cover object-[center_12%]"
+                className="object-contain"
               />
             </div>
           </div>

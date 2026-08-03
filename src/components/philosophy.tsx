@@ -47,7 +47,7 @@ export function Philosophy() {
                   alt={images.quote.alt}
                   fill
                   sizes="(max-width: 1024px) 90vw, 42vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <figcaption className="border-t border-[color:var(--line)] px-5 py-4">

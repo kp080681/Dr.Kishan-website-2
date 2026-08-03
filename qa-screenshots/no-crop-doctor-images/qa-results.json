@@ -1,0 +1,15 @@
+{
+  "shots": [
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\hero-desktop-no-crop.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\about-desktop-no-crop.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\gallery-desktop-no-crop.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\education-desktop-no-crop.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\books-desktop-no-crop.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\gallery-mobile-no-crop.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\no-crop-doctor-images\\hero-mobile-no-crop.png"
+  ],
+  "metrics": {
+    "overflow": false,
+    "brokenImages": 0
+  }
+}

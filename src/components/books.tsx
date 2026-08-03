@@ -34,8 +34,7 @@ export function Books() {
                   alt={book.coverAlt}
                   fill
                   sizes="(max-width: 768px) 90vw, 30vw"
-                  className="object-cover"
-                  style={{ objectPosition: book.objectPosition }}
+                  className="object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/78 via-navy/14 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">

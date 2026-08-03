@@ -71,7 +71,7 @@ export function Education() {
                 alt={images.education.alt}
                 fill
                 sizes="(max-width: 1024px) 90vw, 40vw"
-                className="object-cover object-[center_15%]"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
             </div>

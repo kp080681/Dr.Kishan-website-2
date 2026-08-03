@@ -1,0 +1,73 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": false,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-1440.png"
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": false,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-1280.png"
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": false,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-1024.png"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": false,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-768.png"
+    },
+    {
+      "width": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": true,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-430.png"
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": true,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-390.png"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "imageCount": 4,
+      "brokenImages": 0,
+      "mobilePanEnabled": true,
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\testimonial-review-gallery\\testimonials-final-320.png"
+    }
+  ],
+  "lightbox": {
+    "modalOpen": true,
+    "afterNext": "2 / 4",
+    "modalClosed": true
+  },
+  "consoleErrors": []
+}

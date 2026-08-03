@@ -33,7 +33,7 @@ export function Gallery() {
                 alt={item.alt}
                 fill
                 sizes="(max-width: 1024px) 50vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/65 via-transparent to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 p-3 text-sm font-medium text-white sm:p-4">
