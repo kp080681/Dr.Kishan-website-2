@@ -1,0 +1,488 @@
+[
+  {
+    "width": 1440,
+    "overflowX": false,
+    "headingCount": 41,
+    "clipped": [],
+    "sizes": [
+      {
+        "tag": "H1",
+        "text": "Dr. Kishan Rao",
+        "fontSize": "57.6px",
+        "lineHeight": "60.48px"
+      },
+      {
+        "tag": "H2",
+        "text": "Locations and timings",
+        "fontSize": "36px",
+        "lineHeight": "41.04px"
+      },
+      {
+        "tag": "H3",
+        "text": "AJ Hospital",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "Bhat’s Nursing Home",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "Namma Arogyadhama",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "Adarsha Hospital",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "Visiting consultations",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Surgical care organised around clear clinical pathways",
+        "fontSize": "36px",
+        "lineHeight": "41.04px"
+      },
+      {
+        "tag": "H3",
+        "text": "General Surgery",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "Laparoscopic Surgery",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "LASER Surgery",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      },
+      {
+        "tag": "H3",
+        "text": "Vascular Surgery",
+        "fontSize": "19.44px",
+        "lineHeight": "24.3px"
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\heading-scale-pass\\homepage-heading-1440.png"
+  },
+  {
+    "width": 1280,
+    "overflowX": false,
+    "headingCount": 41,
+    "clipped": [],
+    "sizes": [
+      {
+        "tag": "H1",
+        "text": "Dr. Kishan Rao",
+        "fontSize": "51.2px",
+        "lineHeight": "53.76px"
+      },
+      {
+        "tag": "H2",
+        "text": "Locations and timings",
+        "fontSize": "32px",
+        "lineHeight": "36.48px"
+      },
+      {
+        "tag": "H3",
+        "text": "AJ Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Bhat’s Nursing Home",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Namma Arogyadhama",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Adarsha Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Visiting consultations",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Surgical care organised around clear clinical pathways",
+        "fontSize": "32px",
+        "lineHeight": "36.48px"
+      },
+      {
+        "tag": "H3",
+        "text": "General Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Laparoscopic Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "LASER Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Vascular Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\heading-scale-pass\\homepage-heading-1280.png"
+  },
+  {
+    "width": 1024,
+    "overflowX": false,
+    "headingCount": 41,
+    "clipped": [],
+    "sizes": [
+      {
+        "tag": "H1",
+        "text": "Dr. Kishan Rao",
+        "fontSize": "40.96px",
+        "lineHeight": "43.008px"
+      },
+      {
+        "tag": "H2",
+        "text": "Locations and timings",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "AJ Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Bhat’s Nursing Home",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Namma Arogyadhama",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Adarsha Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Visiting consultations",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Surgical care organised around clear clinical pathways",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "General Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Laparoscopic Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "LASER Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Vascular Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\heading-scale-pass\\homepage-heading-1024.png"
+  },
+  {
+    "width": 768,
+    "overflowX": false,
+    "headingCount": 41,
+    "clipped": [],
+    "sizes": [
+      {
+        "tag": "H1",
+        "text": "Dr. Kishan Rao",
+        "fontSize": "37.6px",
+        "lineHeight": "39.48px"
+      },
+      {
+        "tag": "H2",
+        "text": "Locations and timings",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "AJ Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Bhat’s Nursing Home",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Namma Arogyadhama",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Adarsha Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Visiting consultations",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Surgical care organised around clear clinical pathways",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "General Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Laparoscopic Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "LASER Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Vascular Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\heading-scale-pass\\homepage-heading-768.png"
+  },
+  {
+    "width": 390,
+    "overflowX": false,
+    "headingCount": 41,
+    "clipped": [],
+    "sizes": [
+      {
+        "tag": "H1",
+        "text": "Dr. Kishan Rao",
+        "fontSize": "37.6px",
+        "lineHeight": "39.48px"
+      },
+      {
+        "tag": "H2",
+        "text": "Locations and timings",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "AJ Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Bhat’s Nursing Home",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Namma Arogyadhama",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Adarsha Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Visiting consultations",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Surgical care organised around clear clinical pathways",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "General Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Laparoscopic Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "LASER Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Vascular Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\heading-scale-pass\\homepage-heading-390.png"
+  },
+  {
+    "width": 320,
+    "overflowX": false,
+    "headingCount": 41,
+    "clipped": [],
+    "sizes": [
+      {
+        "tag": "H1",
+        "text": "Dr. Kishan Rao",
+        "fontSize": "37.6px",
+        "lineHeight": "39.48px"
+      },
+      {
+        "tag": "H2",
+        "text": "Locations and timings",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "AJ Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Bhat’s Nursing Home",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Namma Arogyadhama",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Adarsha Hospital",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Visiting consultations",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      },
+      {
+        "tag": "H2",
+        "text": "Surgical care organised around clear clinical pathways",
+        "fontSize": "28px",
+        "lineHeight": "31.92px"
+      },
+      {
+        "tag": "H3",
+        "text": "General Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Laparoscopic Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "LASER Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      },
+      {
+        "tag": "H3",
+        "text": "Vascular Surgery",
+        "fontSize": "18.4px",
+        "lineHeight": "23px"
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\heading-scale-pass\\homepage-heading-320.png"
+  }
+]

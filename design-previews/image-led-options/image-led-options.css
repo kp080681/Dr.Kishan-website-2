@@ -1,0 +1,733 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --navy: #0b1c33;
+  --navy-soft: #24364f;
+  --ink: #13253d;
+  --ink-muted: #4a5d73;
+  --blue: #1d4f91;
+  --blue-deep: #14386c;
+  --blue-soft: #e8f0f8;
+  --red: #9a1f2e;
+  --surface: #f7f5f2;
+  --surface-warm: #f0ece6;
+  --line: rgba(11, 28, 51, 0.12);
+  --shadow: 0 20px 54px rgba(11, 28, 51, 0.12);
+  --container: 76rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fbfaf8;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 250, 248, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.topbar .container {
+  display: flex;
+  align-items: center;
+  min-height: 76px;
+  gap: 48px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 320px;
+}
+
+.brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  box-shadow: 0 4px 14px rgba(11, 28, 51, 0.08);
+}
+
+.brand strong,
+.brand span {
+  display: block;
+  white-space: nowrap;
+}
+
+.brand strong {
+  color: var(--navy);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.brand span {
+  margin-top: 4px;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  flex: 1;
+  color: var(--navy-soft);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.section {
+  padding-block: 72px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--red);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin-top: 14px;
+  font-size: clamp(2.35rem, 4vw, 4.1rem);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-top: 14px;
+  font-size: clamp(1.75rem, 2.5vw, 2.75rem);
+  line-height: 1.14;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 1.35vw, 1.4rem);
+  line-height: 1.25;
+}
+
+.role {
+  margin-top: 12px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.claim {
+  margin-top: 28px;
+  max-width: 38rem;
+  color: var(--navy);
+  font-size: 1.24rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.lede {
+  margin-top: 18px;
+  max-width: 43rem;
+  color: var(--ink-muted);
+  font-size: 1.04rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.button.primary {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 10px 24px rgba(29, 79, 145, 0.22);
+}
+
+.button.red {
+  background: var(--red);
+  color: white;
+}
+
+.button.outline {
+  border: 1px solid rgba(11, 28, 51, 0.22);
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.button img {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo,
+.portrait-frame,
+.about-photo,
+.dark-photo {
+  overflow: hidden;
+  border: 1px solid rgba(11, 28, 51, 0.14);
+  background: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+.hero-photo img,
+.portrait-frame img,
+.about-photo img,
+.dark-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-head {
+  max-width: 760px;
+}
+
+.services-grid,
+.locations-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.services-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.locations-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.service-card,
+.location-card,
+.milestone {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 24px;
+}
+
+.service-card p,
+.location-card p,
+.milestone p {
+  margin-top: 10px;
+  color: var(--ink-muted);
+  font-size: 0.94rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 58px;
+  align-items: center;
+}
+
+.milestones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.dark-section,
+.final-cta {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.dark-section .eyebrow,
+.final-cta .eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dark-section .eyebrow::before,
+.final-cta .eyebrow::before {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.dark-section h2,
+.dark-section h3,
+.final-cta h2,
+.final-cta h3 {
+  color: white;
+}
+
+.dark-section .lede,
+.final-cta .lede {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-card {
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cinematic Clinical */
+.cinematic {
+  background: var(--surface);
+}
+
+.cinematic .hero {
+  min-height: 790px;
+  display: grid;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: white;
+}
+
+.cinematic .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 28, 51, 0.88) 0%, rgba(11, 28, 51, 0.72) 38%, rgba(11, 28, 51, 0.26) 72%, rgba(11, 28, 51, 0.48) 100%),
+    url("../../public/images/hero/outdoor-white-coat.jpg") center 20% / cover no-repeat;
+}
+
+.cinematic .hero .eyebrow,
+.cinematic .hero h1,
+.cinematic .hero .role,
+.cinematic .hero .claim,
+.cinematic .hero .lede {
+  color: white;
+}
+
+.cinematic .hero .lede {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.cinematic .services {
+  background: white;
+}
+
+.cinematic .about {
+  background: #f7f5f2;
+}
+
+.cinematic .about-photo {
+  height: 620px;
+  border-radius: 0 22px 22px 0;
+}
+
+.cinematic .about-photo img {
+  object-position: center 10%;
+}
+
+.cinematic .dark-section {
+  position: relative;
+  overflow: hidden;
+  background: #0b1c33;
+}
+
+.cinematic .dark-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 28, 51, 0.94) 0%, rgba(11, 28, 51, 0.84) 52%, rgba(11, 28, 51, 0.32) 100%),
+    url("../../public/images/clinical/operation-theatre.jpg") right center / cover no-repeat;
+}
+
+.cinematic .dark-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cinematic .final-cta {
+  background: #fbfaf8;
+}
+
+.cinematic .cta-card {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(20, 56, 108, 0.96) 0%, rgba(20, 56, 108, 0.88) 54%, rgba(20, 56, 108, 0.36) 100%),
+    url("../../public/images/gallery/surgical-portrait.jpg") right 18% / auto 160% no-repeat;
+  padding: 54px;
+}
+
+/* Editorial Portrait */
+.editorial {
+  background: #fbfaf8;
+}
+
+.editorial .hero {
+  padding-block: 82px 70px;
+  overflow: hidden;
+}
+
+.editorial .hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.editorial .portrait-stack {
+  position: relative;
+  min-height: 680px;
+}
+
+.editorial .portrait-frame.large {
+  position: absolute;
+  inset: 0 0 58px 70px;
+  border-radius: 24px;
+}
+
+.editorial .portrait-frame.large img {
+  object-position: center 12%;
+}
+
+.editorial .portrait-frame.small {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 38%;
+  height: 320px;
+  border-radius: 18px;
+}
+
+.editorial .portrait-frame.small img {
+  object-position: center 10%;
+}
+
+.editorial .services {
+  background: #f3f0ea;
+}
+
+.editorial .services-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.editorial .service-card {
+  min-height: 170px;
+  padding: 30px;
+}
+
+.editorial .about {
+  background: #fbfaf8;
+}
+
+.editorial .about-photo {
+  height: 700px;
+  border-radius: 24px;
+}
+
+.editorial .about-photo img {
+  object-position: center 10%;
+}
+
+.editorial .dark-section {
+  background: #0b1c33;
+}
+
+.editorial .dark-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.editorial .dark-photo {
+  height: 520px;
+  border-radius: 24px;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.editorial .dark-photo img {
+  object-position: center 18%;
+}
+
+.editorial .final-cta {
+  background: #f3f0ea;
+}
+
+.editorial .cta-card {
+  display: grid;
+  grid-template-columns: 1fr 0.55fr;
+  align-items: stretch;
+  background: var(--navy);
+}
+
+.editorial .cta-content {
+  padding: 52px;
+}
+
+.editorial .cta-image {
+  min-height: 340px;
+  background:
+    linear-gradient(rgba(11, 28, 51, 0.12), rgba(11, 28, 51, 0.56)),
+    url("../../public/images/education/formal-suit.jpg") center 12% / cover no-repeat;
+}
+
+/* Surgical Precision */
+.precision {
+  background: #f8fafb;
+}
+
+.precision .hero {
+  padding-block: 78px 64px;
+  background: #eef3f8;
+}
+
+.precision .hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.precision .hero-photo {
+  height: 650px;
+  border-radius: 18px;
+  border-color: rgba(29, 79, 145, 0.22);
+}
+
+.precision .hero-photo img {
+  object-position: center;
+}
+
+.precision .services {
+  background: white;
+}
+
+.precision .services-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.precision .service-card,
+.precision .location-card,
+.precision .milestone {
+  border-radius: 8px;
+}
+
+.precision .about {
+  background: #eef3f8;
+}
+
+.precision .about-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.precision .about-photo {
+  height: 620px;
+  border-radius: 16px;
+  border-color: rgba(29, 79, 145, 0.24);
+}
+
+.precision .about-photo img {
+  object-position: center 10%;
+}
+
+.precision .dark-section {
+  position: relative;
+  overflow: hidden;
+  background: #0b1c33;
+}
+
+.precision .dark-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 28, 51, 0.95) 0%, rgba(20, 56, 108, 0.88) 42%, rgba(20, 56, 108, 0.44) 100%),
+    url("../../public/images/clinical/operation-theatre.jpg") right center / cover no-repeat;
+}
+
+.precision .dark-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.precision .locations-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.precision .final-cta {
+  background: white;
+}
+
+.precision .cta-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.28fr);
+  background: var(--blue-deep);
+}
+
+.precision .cta-content {
+  padding: 52px;
+}
+
+.precision .cta-strip {
+  min-height: 330px;
+  background:
+    linear-gradient(rgba(20, 56, 108, 0.1), rgba(20, 56, 108, 0.62)),
+    url("../../public/images/clinical/surgical-portrait.jpg") center 12% / cover no-repeat;
+}
+
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+
+  .topbar .container {
+    min-height: 72px;
+  }
+
+  .hero-layout,
+  .cinematic .hero .container,
+  .editorial .hero-layout,
+  .precision .hero-layout,
+  .about-grid,
+  .editorial .dark-layout,
+  .editorial .cta-card,
+  .precision .cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .locations-grid,
+  .precision .services-grid,
+  .precision .locations-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .editorial .portrait-stack {
+    min-height: 560px;
+  }
+
+  .editorial .portrait-frame.large {
+    left: 42px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand span {
+    font-size: 0.56rem;
+  }
+
+  .section,
+  .editorial .hero,
+  .precision .hero {
+    padding-block: 52px;
+  }
+
+  .cinematic .hero {
+    min-height: 760px;
+  }
+
+  .services-grid,
+  .locations-grid,
+  .precision .services-grid,
+  .precision .locations-grid,
+  .milestones {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial .portrait-stack {
+    min-height: 470px;
+  }
+
+  .editorial .portrait-frame.large {
+    inset: 0 0 68px 34px;
+  }
+
+  .editorial .portrait-frame.small {
+    width: 48%;
+    height: 230px;
+  }
+
+  .cinematic .about-photo,
+  .precision .hero-photo,
+  .precision .about-photo,
+  .editorial .about-photo,
+  .editorial .dark-photo {
+    height: 430px;
+  }
+
+  .cinematic .cta-card,
+  .editorial .cta-content,
+  .precision .cta-content {
+    padding: 32px;
+  }
+}

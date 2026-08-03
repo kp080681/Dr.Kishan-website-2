@@ -1,0 +1,88 @@
+{
+  "screenshots": [
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\hero-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\hero-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\services-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\services-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\locations-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\locations-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\about-milestones-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\about-milestones-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\testimonials-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\testimonials-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\gallery-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\gallery-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\final-cta-final-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\final-cta-final-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-final-1440.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-final-768.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-final-390.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-final-320.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-scroll-final-top.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-scroll-final-mid.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-scroll-final-end.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-menu-final-390-open.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\no-js-content-visible-390.png"
+  ],
+  "activeStates": {
+    "services": "Services",
+    "consultation": "Consultation",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "gallery": "Gallery"
+  },
+  "noJs": {
+    "hiddenByReveal": 0,
+    "overflow": false
+  },
+  "responsive": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "clipped": 0
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "clipped": 0
+    }
+  ]
+}

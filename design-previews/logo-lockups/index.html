@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dr. Kishan Rao Logo Lockup Review</title>
+    <style>
+      :root {
+        --navy: #0b1c33;
+        --navy-soft: #24364f;
+        --ink-muted: #4a5d73;
+        --blue: #1d4f91;
+        --red: #9a1f2e;
+        --surface: #f7f5f2;
+        --surface-elevated: #ffffff;
+        --line: rgba(11, 28, 51, 0.12);
+        --line-dark: rgba(255, 255, 255, 0.16);
+        --footer: #071b31;
+        --font-sans: Poppins, "Segoe UI", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #fbfaf8, var(--surface));
+        color: var(--navy);
+        font-family: var(--font-sans);
+      }
+
+      main {
+        display: grid;
+        gap: 28px;
+        padding: 36px;
+      }
+
+      .option {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface-elevated);
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+        padding: 14px 22px;
+        color: var(--ink-muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .label strong {
+        color: var(--red);
+      }
+
+      .header {
+        display: flex;
+        min-height: 82px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        padding: 0 56px;
+        background: rgba(251, 250, 248, 0.94);
+      }
+
+      .nav {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        gap: clamp(28px, 4vw, 60px);
+        color: var(--navy-soft);
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .footer {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+        gap: 48px;
+        padding: 42px 56px;
+        background: var(--footer);
+        color: #ffffff;
+      }
+
+      .footer .meta,
+      .footer .descriptor {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .footer-links {
+        display: grid;
+        gap: 10px;
+        align-content: start;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 14px;
+      }
+
+      .lockup {
+        display: inline-flex;
+        min-width: 0;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .mark {
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+      }
+
+      .mark img {
+        display: block;
+        height: 54px;
+        width: auto;
+      }
+
+      .footer .mark img {
+        height: 62px;
+      }
+
+      .identity {
+        display: grid;
+        gap: 4px;
+        line-height: 1.1;
+      }
+
+      .name {
+        color: var(--navy);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+
+      .descriptor {
+        color: var(--ink-muted);
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .meta {
+        margin-top: 8px;
+        color: var(--ink-muted);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .footer .name {
+        color: #ffffff;
+      }
+
+      .frame .mark {
+        height: 58px;
+        width: 58px;
+        border: 1px solid rgba(154, 31, 46, 0.34);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .frame .mark img {
+        height: 45px;
+      }
+
+      .footer .frame .mark {
+        height: 66px;
+        width: 66px;
+        border-color: rgba(255, 255, 255, 0.26);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .footer .frame .mark img {
+        height: 52px;
+      }
+
+      .chip {
+        gap: 16px;
+        border: 1px solid rgba(11, 28, 51, 0.08);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        padding: 8px 18px 8px 10px;
+      }
+
+      .chip .mark img {
+        height: 48px;
+      }
+
+      .footer .chip {
+        border-color: var(--line-dark);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .footer .chip .mark img {
+        height: 56px;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          padding: 18px;
+        }
+
+        .header,
+        .footer {
+          padding-inline: 22px;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .footer {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="option" id="option-1">
+        <div class="label"><strong>Option 1</strong><span>Clean logo without container</span></div>
+        <div class="header">
+          <div class="lockup clean">
+            <span class="mark"><img src="assets/surgeon-kishan-logo-transparent.png" alt="Surgeon Kishan logo" /></span>
+            <span class="identity">
+              <span class="name">Dr. Kishan Rao</span>
+              <span class="descriptor">General, Laparoscopic &amp; LASER Surgeon</span>
+            </span>
+          </div>
+          <nav class="nav" aria-label="Preview navigation">
+            <span>Home</span><span>Services</span><span>About</span><span>Consultation</span><span>Gallery</span>
+          </nav>
+        </div>
+        <div class="footer">
+          <div>
+            <div class="lockup clean">
+              <span class="mark"><img src="assets/surgeon-kishan-logo-transparent.png" alt="Surgeon Kishan logo" /></span>
+              <span class="identity">
+                <span class="name">Dr. Kishan Rao</span>
+                <span class="descriptor">General, Laparoscopic &amp; LASER Surgeon</span>
+                <span class="meta">MBBS (BMC), MS (Gold Medalist), FMAS, DMAS</span>
+              </span>
+            </div>
+          </div>
+          <div class="footer-links"><strong>Contact</strong><span>+91 81052 32787</span><span>WhatsApp</span></div>
+        </div>
+      </section>
+
+      <section class="option" id="option-2">
+        <div class="label"><strong>Option 2</strong><span>Ultra-thin premium circular frame</span></div>
+        <div class="header">
+          <div class="lockup frame">
+            <span class="mark"><img src="assets/surgeon-kishan-logo-transparent.png" alt="Surgeon Kishan logo" /></span>
+            <span class="identity">
+              <span class="name">Dr. Kishan Rao</span>
+              <span class="descriptor">General, Laparoscopic &amp; LASER Surgeon</span>
+            </span>
+          </div>
+          <nav class="nav" aria-label="Preview navigation">
+            <span>Home</span><span>Services</span><span>About</span><span>Consultation</span><span>Gallery</span>
+          </nav>
+        </div>
+        <div class="footer">
+          <div>
+            <div class="lockup frame">
+              <span class="mark"><img src="assets/surgeon-kishan-logo-transparent.png" alt="Surgeon Kishan logo" /></span>
+              <span class="identity">
+                <span class="name">Dr. Kishan Rao</span>
+                <span class="descriptor">General, Laparoscopic &amp; LASER Surgeon</span>
+                <span class="meta">MBBS (BMC), MS (Gold Medalist), FMAS, DMAS</span>
+              </span>
+            </div>
+          </div>
+          <div class="footer-links"><strong>Contact</strong><span>+91 81052 32787</span><span>WhatsApp</span></div>
+        </div>
+      </section>
+
+      <section class="option" id="option-3">
+        <div class="label"><strong>Option 3</strong><span>Subtle background chip behind complete lockup</span></div>
+        <div class="header">
+          <div class="lockup chip">
+            <span class="mark"><img src="assets/surgeon-kishan-logo-transparent.png" alt="Surgeon Kishan logo" /></span>
+            <span class="identity">
+              <span class="name">Dr. Kishan Rao</span>
+              <span class="descriptor">General, Laparoscopic &amp; LASER Surgeon</span>
+            </span>
+          </div>
+          <nav class="nav" aria-label="Preview navigation">
+            <span>Home</span><span>Services</span><span>About</span><span>Consultation</span><span>Gallery</span>
+          </nav>
+        </div>
+        <div class="footer">
+          <div>
+            <div class="lockup chip">
+              <span class="mark"><img src="assets/surgeon-kishan-logo-transparent.png" alt="Surgeon Kishan logo" /></span>
+              <span class="identity">
+                <span class="name">Dr. Kishan Rao</span>
+                <span class="descriptor">General, Laparoscopic &amp; LASER Surgeon</span>
+                <span class="meta">MBBS (BMC), MS (Gold Medalist), FMAS, DMAS</span>
+              </span>
+            </div>
+          </div>
+          <div class="footer-links"><strong>Contact</strong><span>+91 81052 32787</span><span>WhatsApp</span></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

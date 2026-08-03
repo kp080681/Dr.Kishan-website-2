@@ -1,0 +1,272 @@
+[
+  {
+    "width": 1440,
+    "headerHeight": 76,
+    "desktopHeaderWhatsAppRemoved": true,
+    "desktopHeaderBookingRemoved": true,
+    "topRowText": "Dr. Kishan RaoGeneral, Laparoscopic & LASER SurgeonHomeServicesAboutConsultationTestimonialsGalleryBlogs",
+    "navDisplay": "flex",
+    "navJustify": "space-between",
+    "hamburgerDisplay": "none",
+    "descriptorVisible": true,
+    "descriptorText": "General, Laparoscopic & LASER Surgeon",
+    "descriptorClipped": false,
+    "descriptorOverflow": "clip",
+    "overflowX": false,
+    "whatsappCount": 5,
+    "whatsappAllUseAsset": true,
+    "waIcons": [
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp for appointment",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\header-whatsapp-pass\\header-whatsapp-1440.png"
+  },
+  {
+    "width": 1280,
+    "headerHeight": 76,
+    "desktopHeaderWhatsAppRemoved": true,
+    "desktopHeaderBookingRemoved": true,
+    "topRowText": "Dr. Kishan RaoGeneral, Laparoscopic & LASER SurgeonHomeServicesAboutConsultationTestimonialsGalleryBlogs",
+    "navDisplay": "flex",
+    "navJustify": "space-between",
+    "hamburgerDisplay": "none",
+    "descriptorVisible": true,
+    "descriptorText": "General, Laparoscopic & LASER Surgeon",
+    "descriptorClipped": false,
+    "descriptorOverflow": "clip",
+    "overflowX": false,
+    "whatsappCount": 5,
+    "whatsappAllUseAsset": true,
+    "waIcons": [
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp for appointment",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\header-whatsapp-pass\\header-whatsapp-1280.png"
+  },
+  {
+    "width": 1024,
+    "headerHeight": 76,
+    "desktopHeaderWhatsAppRemoved": true,
+    "desktopHeaderBookingRemoved": true,
+    "topRowText": "Dr. Kishan RaoGeneral, Laparoscopic & LASER SurgeonHomeServicesAboutConsultationTestimonialsGalleryBlogs",
+    "navDisplay": "none",
+    "navJustify": "space-between",
+    "hamburgerDisplay": "flex",
+    "descriptorVisible": true,
+    "descriptorText": "General, Laparoscopic & LASER Surgeon",
+    "descriptorClipped": false,
+    "descriptorOverflow": "clip",
+    "overflowX": false,
+    "whatsappCount": 5,
+    "whatsappAllUseAsset": true,
+    "waIcons": [
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp for appointment",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\header-whatsapp-pass\\header-whatsapp-1024.png"
+  },
+  {
+    "width": 768,
+    "headerHeight": 76,
+    "desktopHeaderWhatsAppRemoved": true,
+    "desktopHeaderBookingRemoved": true,
+    "topRowText": "Dr. Kishan RaoGeneral, Laparoscopic & LASER SurgeonHomeServicesAboutConsultationTestimonialsGalleryBlogs",
+    "navDisplay": "none",
+    "navJustify": "space-between",
+    "hamburgerDisplay": "flex",
+    "descriptorVisible": true,
+    "descriptorText": "General, Laparoscopic & LASER Surgeon",
+    "descriptorClipped": false,
+    "descriptorOverflow": "clip",
+    "overflowX": false,
+    "whatsappCount": 5,
+    "whatsappAllUseAsset": true,
+    "waIcons": [
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp for appointment",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\header-whatsapp-pass\\header-whatsapp-768.png"
+  },
+  {
+    "width": 390,
+    "headerHeight": 72,
+    "desktopHeaderWhatsAppRemoved": true,
+    "desktopHeaderBookingRemoved": true,
+    "topRowText": "Dr. Kishan RaoGeneral, Laparoscopic & LASER SurgeonHomeServicesAboutConsultationTestimonialsGalleryBlogs",
+    "navDisplay": "none",
+    "navJustify": "space-between",
+    "hamburgerDisplay": "flex",
+    "descriptorVisible": true,
+    "descriptorText": "General, Laparoscopic & LASER Surgeon",
+    "descriptorClipped": false,
+    "descriptorOverflow": "clip",
+    "overflowX": false,
+    "whatsappCount": 5,
+    "whatsappAllUseAsset": true,
+    "waIcons": [
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp for appointment",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\header-whatsapp-pass\\header-whatsapp-390.png"
+  },
+  {
+    "width": 320,
+    "headerHeight": 72,
+    "desktopHeaderWhatsAppRemoved": true,
+    "desktopHeaderBookingRemoved": true,
+    "topRowText": "Dr. Kishan RaoGeneral, Laparoscopic & LASER SurgeonHomeServicesAboutConsultationTestimonialsGalleryBlogs",
+    "navDisplay": "none",
+    "navJustify": "space-between",
+    "hamburgerDisplay": "flex",
+    "descriptorVisible": true,
+    "descriptorText": "General, Laparoscopic & LASER Surgeon",
+    "descriptorClipped": false,
+    "descriptorOverflow": "clip",
+    "overflowX": false,
+    "whatsappCount": 5,
+    "whatsappAllUseAsset": true,
+    "waIcons": [
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp for appointment",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      },
+      {
+        "label": "WhatsApp",
+        "src": "/images/brand/whatsapp-icon.svg",
+        "hasAsset": true
+      }
+    ],
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\header-whatsapp-pass\\header-whatsapp-320.png"
+  }
+]

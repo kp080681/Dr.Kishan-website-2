@@ -1,0 +1,111 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "headerHeight": 76,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-1440.png"
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "headerHeight": 76,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-1280.png"
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "headerHeight": 76,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-1024.png"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "headerHeight": 76,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-768.png"
+    },
+    {
+      "width": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "headerHeight": 72,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-430.png"
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "headerHeight": 72,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-390.png"
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "headerHeight": 72,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-375.png"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "headerHeight": 72,
+      "clipped": [],
+      "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\viewport-320.png"
+    }
+  ],
+  "sequentialScreenshots": [
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\hero-entrance-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\hero-entrance-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\services-reveal-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\services-reveal-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\locations-reveal-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\locations-reveal-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\about-milestones-motion-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\about-milestones-motion-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\testimonials-motion-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\testimonials-motion-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\gallery-motion-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\gallery-motion-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\final-cta-01-entering.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\final-cta-02-settled.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-scroll-390-top.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-scroll-390-mid.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-scroll-390-end.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\mobile-menu-390-open.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\reduced-motion-390.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\service-hover-focus-1440.png",
+    "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\qa-screenshots\\living-editorial\\slow-device-gallery-1440.png"
+  ],
+  "reducedMotion": {
+    "hiddenReveals": 0,
+    "transitions": 0
+  },
+  "keyboard": {
+    "activeTag": "A",
+    "activeText": "Instagram",
+    "outline": "solid"
+  },
+  "mobileMenu": {
+    "open": "true",
+    "visible": true,
+    "overflow": false
+  },
+  "slowDevice": {
+    "cpuThrottle": "4x",
+    "galleryReachMs": 2705,
+    "overflow": false
+  },
+  "consoleErrors": []
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "html": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\design-previews\\image-led-options\\cinematic-clinical.html",
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\design-previews\\image-led-options\\screenshots\\cinematic-clinical.png",
+    "title": "Cinematic Clinical",
+    "overflowX": false,
+    "hasHero": true,
+    "hasServices": true,
+    "hasAbout": true,
+    "hasDark": true,
+    "hasFinalCta": true,
+    "imageCount": 4
+  },
+  {
+    "html": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\design-previews\\image-led-options\\editorial-portrait.html",
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\design-previews\\image-led-options\\screenshots\\editorial-portrait.png",
+    "title": "Editorial Portrait",
+    "overflowX": false,
+    "hasHero": true,
+    "hasServices": true,
+    "hasAbout": true,
+    "hasDark": true,
+    "hasFinalCta": true,
+    "imageCount": 7
+  },
+  {
+    "html": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\design-previews\\image-led-options\\surgical-precision.html",
+    "screenshot": "C:\\Users\\Dealup Admin\\OneDrive - Dealup Strategies Private Limited\\Documents\\Dr.kishan website 2\\design-previews\\image-led-options\\screenshots\\surgical-precision.png",
+    "title": "Surgical Precision",
+    "overflowX": false,
+    "hasHero": true,
+    "hasServices": true,
+    "hasAbout": true,
+    "hasDark": true,
+    "hasFinalCta": true,
+    "imageCount": 5
+  }
+]
