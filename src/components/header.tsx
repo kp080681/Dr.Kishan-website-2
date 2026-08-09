@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BrandLogo } from "@/components/brand-logo";
 import { IconClose, IconMenu, IconWhatsApp } from "@/components/icons";
-import { doctor, navItems } from "@/content/site";
+import { doctor, images, navItems } from "@/content/site";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -69,13 +69,15 @@ export function Header() {
           className="flex min-w-0 flex-1 items-center gap-3.5 rounded-[var(--radius-sm)] py-1.5 pr-2 min-[1200px]:flex-none min-[1200px]:gap-4 min-[1200px]:pr-0"
           onClick={() => setOpen(false)}
         >
-          <span className="relative flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full border border-red/25 bg-white/55 p-1.5 sm:h-[50px] sm:w-[50px] md:h-[54px] md:w-[54px]">
-            <span className="block h-full w-full">
-              <BrandLogo
-                sizes="(max-width: 640px) 78px, (max-width: 768px) 88px, 104px"
-                priority
-              />
-            </span>
+          <span className="relative h-[46px] w-[46px] shrink-0 overflow-hidden rounded-full border border-red/25 bg-white p-1 shadow-[0_8px_20px_rgba(11,28,51,0.08)] sm:h-[50px] sm:w-[50px] md:h-[54px] md:w-[54px]">
+            <Image
+              src={images.logo.src}
+              alt={images.logo.alt}
+              fill
+              sizes="54px"
+              priority
+              className="object-contain p-1"
+            />
           </span>
           <span className="min-w-0 leading-none">
             <span className="block whitespace-nowrap text-[0.92rem] font-semibold leading-tight text-navy sm:text-base">

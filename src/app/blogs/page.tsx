@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getBlogIndex } from "@/lib/blogs";
 import { SiteShell } from "@/components/site-shell";
@@ -6,11 +7,13 @@ import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
   title: "Blogs",
   description:
-    "Educational surgical articles by Dr. Kishan Rao. Migrated from surgeonkishan.com and pending medical review.",
+    "Educational surgical articles by Dr. Kishan Rao for patients and learners.",
 };
 
 export default function BlogsIndexPage() {
   const posts = getBlogIndex();
+  const getFeaturedImagePosition = (src: string) =>
+    src.startsWith("/images/gallery/originals/") ? "center top" : "center";
 
   return (
     <SiteShell>
@@ -20,8 +23,8 @@ export default function BlogsIndexPage() {
             <p className="eyebrow">Blogs</p>
             <h1 className="heading-display heading-xl">Educational articles</h1>
             <p className="lede">
-              These articles were migrated from surgeonkishan.com. Content is preserved for continuity and
-              marked pending medical review before clinical claims should be treated as current guidance.
+              Clear patient-education articles on surgical conditions, treatment options and
+              recovery.
             </p>
           </div>
 
@@ -29,32 +32,43 @@ export default function BlogsIndexPage() {
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="flex h-full flex-col rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-[var(--card-pad)]"
+                className="flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-white"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-red">
-                  Medical review pending
-                </p>
-                {post.publishedAt ? (
-                  <p className="mt-2 text-sm text-ink-muted">
-                    {new Date(post.publishedAt).toLocaleDateString("en-IN", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
+                <div className="relative aspect-[16/10] shrink-0 overflow-hidden">
+                  <Image
+                    src={post.featuredImage}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: getFeaturedImagePosition(post.featuredImage) }}
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-[var(--card-pad)]">
+                  {post.publishedAt ? (
+                    <p className="text-sm text-ink-muted">
+                      {new Date(post.publishedAt).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </p>
+                  ) : null}
+                  <h2 className="heading-display heading-card mt-3">
+                    <Link href={`/blogs/${post.slug}`} className="hover:text-blue">
+                      {post.title}
+                    </Link>
+                  </h2>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
+                    {post.excerpt}
                   </p>
-                ) : null}
-                <h2 className="heading-display heading-card mt-3">
-                  <Link href={`/blogs/${post.slug}`} className="hover:text-blue">
-                    {post.title}
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className="mt-5 text-sm font-semibold text-blue hover:underline"
+                  >
+                    Read article
                   </Link>
-                </h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{post.excerpt}</p>
-                <Link
-                  href={`/blogs/${post.slug}`}
-                  className="mt-5 text-sm font-semibold text-blue hover:underline"
-                >
-                  Read article
-                </Link>
+                </div>
               </article>
             ))}
           </div>

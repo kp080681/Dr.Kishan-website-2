@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { aboutMilestones, doctor, images } from "@/content/site";
+import { aboutMilestones, doctor, fullProfileSections, images } from "@/content/site";
+import { ExpandablePanel } from "@/components/expandable-panel";
 import { Reveal } from "@/components/reveal";
 
 export function About() {
@@ -14,7 +15,9 @@ export function About() {
                 alt={images.about.alt}
                 fill
                 sizes="(max-width: 1024px) 90vw, 38vw"
-                className="object-contain"
+                quality={90}
+                className="object-cover"
+                style={{ objectPosition: "center 18%" }}
               />
             </div>
           </div>
@@ -24,7 +27,7 @@ export function About() {
           <Reveal className="section-head">
             <p className="eyebrow">About</p>
             <h2 id="about-heading" className="heading-display heading-xl">
-              A surgeon patients can talk to — and trust with careful decisions
+              A surgeon patients can talk to - and trust with careful decisions
             </h2>
             <p className="text-[length:var(--text-support)] font-semibold text-red">
               {doctor.credentials}
@@ -34,18 +37,10 @@ export function About() {
               Mangalore and Dakshina Kannada. Patients meet a clinician who listens first,
               explains clearly, and recommends surgery only when it is appropriate.
             </p>
-            <p className="support-text">
-              His training path includes Bangalore Medical College, where he received the Best
-              Outgoing Student Award, and an MS in General Surgery completed as university
-              topper and Gold Medalist. Further cardiovascular training at AIIMS, New Delhi,
-              paediatric cardiac surgery training at Sree Chitra Tirunal Institute, and
-              specialised work in laparoscopy, endoscopy, robotic surgery and LASER care shape
-              the depth he brings to everyday patient decisions.
-            </p>
           </Reveal>
 
-          <div className="credentials-timeline section-content grid gap-3 sm:grid-cols-2">
-            {aboutMilestones.map((item, index) => (
+          <div className="section-content grid gap-3 sm:grid-cols-2">
+            {aboutMilestones.slice(0, 4).map((item, index) => (
               <Reveal
                 key={item.title}
                 as="article"
@@ -59,6 +54,30 @@ export function About() {
               </Reveal>
             ))}
           </div>
+
+          <ExpandablePanel className="mt-5" label="Read full profile">
+            <div className="rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-5 sm:p-6">
+              <div className="grid gap-4">
+                {fullProfileSections.map((section) => (
+                  <section
+                    key={section.title}
+                    className="rounded-[var(--radius-sm)] border border-[color:var(--line)] bg-surface p-4"
+                    aria-label={section.title}
+                  >
+                    <h3 className="text-base font-semibold text-navy">{section.title}</h3>
+                    <ul className="mt-3 grid gap-2">
+                      {section.items.map((item) => (
+                        <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink-muted">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue" aria-hidden />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                ))}
+              </div>
+            </div>
+          </ExpandablePanel>
         </div>
       </div>
     </section>

@@ -1,7 +1,9 @@
+import { originalGalleryItems } from "./gallery-originals";
+
 export const doctor = {
   name: "Dr. Kishan Rao",
   credentials: "MBBS (BMC), MS (Gold Medalist), FMAS, DMAS",
-  primaryRole: "General, Laparoscopic & LASER Surgeon",
+  primaryRole: "General, Laparoscopic and LASER Surgeon",
   secondaryRoles: ["Career Counsellor and Motivational Mentor"] as const,
   phoneDisplay: "+91 81052 32787",
   phoneTel: "+918105232787",
@@ -10,6 +12,7 @@ export const doctor = {
   social: {
     instagram: "https://instagram.com/surgeonkishan",
     facebook: "https://www.facebook.com/Surgeon-Kishan-107937735579172/",
+    youtube: "https://www.youtube.com/@THEWHITEARMY",
     handle: "Surgeon Kishan",
   },
 } as const;
@@ -21,7 +24,7 @@ export const navItems = [
   { label: "Consultation", href: "/#consultation" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Gallery", href: "/#gallery" },
-  { label: "Blogs", href: "/blogs" },
+  { label: "Blogs", href: "/#blogs" },
 ] as const;
 
 export type LocationStatus = "scheduled" | "visiting";
@@ -36,7 +39,7 @@ export const locations = [
   },
   {
     id: "bhats",
-    name: "Bhat’s Nursing Home",
+    name: "Bhat's Nursing Home",
     place: "Mangalore",
     schedule: "Monday to Friday, 10:00 AM to 1:00 PM",
     status: "scheduled" as LocationStatus,
@@ -59,105 +62,169 @@ export const locations = [
     id: "scs",
     name: "SCS Hospital",
     place: "Mangalore region",
-    schedule: "Visiting consultation — confirm availability",
+    schedule: "Visiting consultation - confirm availability",
     status: "visiting" as LocationStatus,
   },
   {
     id: "colaco",
     name: "Colaco Hospital",
     place: "Mangalore region",
-    schedule: "Visiting consultation — confirm availability",
+    schedule: "Visiting consultation - confirm availability",
     status: "visiting" as LocationStatus,
   },
   {
     id: "yenepoya",
     name: "Yenepoya Speciality Hospital",
     place: "Mangalore",
-    schedule: "Visiting consultation — confirm availability",
+    schedule: "Visiting consultation - confirm availability",
     status: "visiting" as LocationStatus,
   },
 ] as const;
 
 export const services = [
   {
-    id: "general",
-    title: "General Surgery",
-    description:
-      "Thoughtful assessment and surgical care for common and complex conditions of the abdomen, thyroid, breast, hernia and soft tissues.",
+    id: "laser",
+    title: "LASER SURGERY",
+    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: [
-      "Hernia repair",
-      "Gallbladder and appendix care",
-      "Thyroid and breast surgery",
-      "Abdominal and soft-tissue procedures",
+      "Varicose Veins (EVLA)",
+      "Piles (Hemorrhoids)",
+      "Fissure",
+      "Fistula",
+      "Pilonidal Sinus",
     ],
+    previewCount: 3,
+    image: "/images/gallery/originals/2026-07-12-surgical-portrait.jpg",
+    imageAlt: "Dr. Kishan Rao in surgical scrubs",
+    imagePosition: "50% 0%",
   },
   {
     id: "laparoscopic",
-    title: "Laparoscopic Surgery",
-    description:
-      "Minimally invasive keyhole procedures that may support quicker recovery when clinically suitable for the patient.",
-    procedures: [
-      "Diagnostic laparoscopy",
-      "Laparoscopic cholecystectomy",
-      "Laparoscopic appendicectomy",
-      "Selected hernia repairs",
-    ],
+    title: "LAPAROSCOPIC SURGERY",
+    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
+    procedures: ["Gallbladder Stones", "Appendix", "Hernia", "Diagnostic Laparoscopy"],
+    previewCount: 3,
+    image: "/images/gallery/originals/2026-02-23-scrubs-colleague.jpg",
+    imageAlt: "Dr. Kishan Rao in surgical attire with a colleague",
+    imagePosition: "50% 0%",
   },
   {
-    id: "laser",
-    title: "LASER Surgery",
-    description:
-      "Selected LASER procedures offered after careful evaluation, with clear discussion of suitability, benefits and limitations.",
+    id: "general",
+    title: "GENERAL SURGERY",
+    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: [
-      "Proctology-related LASER care",
-      "Selected anorectal procedures",
-      "Patient-specific suitability review",
-      "Post-procedure follow-up planning",
+      "Hernia Surgery",
+      "Breast Surgery",
+      "Thyroid Surgery",
+      "Circumcision",
+      "Diabetic Foot & Ulcer Care",
+      "Minor Surgical Procedures",
+      "Emergency Surgery",
     ],
+    previewCount: 4,
+    image: "/images/gallery/originals/2026-02-23-operation-theatre-team.jpg",
+    imageAlt: "Dr. Kishan Rao in an operation theatre setting",
+    imagePosition: "50% 12%",
   },
   {
     id: "vascular",
-    title: "Vascular Surgery",
-    description:
-      "Evaluation and care for selected vascular concerns, including varicose veins and related circulatory conditions.",
+    title: "VASCULAR SURGERY",
+    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: [
-      "Varicose vein assessment",
-      "Selected venous procedures",
-      "Diabetic ulcer support",
-      "Ongoing wound-care guidance",
+      "Varicose Veins",
+      "Venous Ulcers",
+      "Sclerotherapy",
+      "Peripheral Arterial Disease (PAD)",
     ],
+    previewCount: 3,
+    image: "/images/gallery/originals/2026-06-24-surgical-conference.jpg",
+    imageAlt: "Dr. Kishan Rao at a surgical conference",
+    imagePosition: "50% 0%",
   },
 ] as const;
 
 export const aboutMilestones = [
   {
-    title: "MBBS, Bangalore Medical College",
-    detail: "Best Outgoing Student Award",
+    title: "MBBS",
+    detail: "Bangalore Medical College and Research Institute, Bengaluru.",
   },
   {
     title: "MS General Surgery",
-    detail: "University topper and Gold Medalist",
+    detail: "Agartala Government Medical College, Agartala.",
   },
   {
-    title: "Cardiovascular surgery training",
-    detail: "AIIMS, New Delhi",
+    title: "Overall University Topper",
+    detail: "Gold Medalist among all the branches of MD/MS examination.",
   },
   {
-    title: "Paediatric cardiac surgery training",
-    detail: "Sree Chitra Tirunal Institute, Thiruvananthapuram",
+    title: "Senior Residency",
+    detail: "AIIMS New Delhi and Sri Chitra Tirunal Institute.",
   },
   {
-    title: "Laparoscopy, endoscopy and robotic surgery",
-    detail:
-      "World Laparoscopic Hospital — Course Topper Scholarship, World Association of Laparoscopic Surgeons",
+    title: "Fellowship in Minimal Access Surgery",
+    detail: "World Laparoscopy Hospital, Gurugram.",
   },
   {
-    title: "Advanced LASER surgery training",
-    detail: "IMMAST, Mumbai",
+    title: "Advanced training",
+    detail: "Trained in Laparoscopy, Robotic surgery and Endoscopy.",
+  },
+] as const;
+
+export const fullProfileSections = [
+  {
+    title: "Education",
+    items: [
+      "MBBS - Bangalore Medical College and Research Institute, Bengaluru.",
+      "MS General Surgery - Agartala Government Medical College, Agartala.",
+      "Senior Residency in Cardiovascular and Thoracic Surgery - AIIMS New Delhi.",
+      "Senior Residency in Pediatric Cardiac Surgery - Sri Chitra Tirunal Institute for Medical Sciences and Technology, Thiruvananthapuram.",
+      "Fellowship in Minimal Access Surgery & Diploma in Minimal Access Surgery - World Laparoscopy Hospital, Gurugram.",
+      "Trained in Laparoscopy, Robotic surgery and Endoscopy.",
+    ],
   },
   {
-    title: "Life-support certification",
-    detail: "Basic Life Support and Advanced Cardiac Life Support provider",
+    title: "Academic Achievements",
+    items: [
+      "Best Outgoing student of Jnana Ganga Public School, Bellare.",
+      "Best Outgoing Student of Bangalore Medical College and Research Institute, Bengaluru.",
+      "Overall University Topper among all the branches of MD/MS examination and a Gold Medalist.",
+      "MCh Entrance Exam: 1st Rank in Sri Chitra Tirunal Institute for Medical Sciences and Technology, Thiruvananthapuram.",
+      "MCh Entrance Exam: 2nd Rank in AIIMS, New Delhi.",
+      "World Association of Laparoscopic Surgeons Scholarship.",
+      "Basic Life Support and Advanced Cardiac Life Support Provider Certification by NHCPS, USA.",
+      "Torrent Young Scholar Award in Surgery - Zonal winner.",
+      "More than 10 Research paper publications in reputed International and national journals.",
+      "Winner of several research paper and poster presentation competitions in various state and national conferences.",
+      "Honorary B C Roy Award for the service in Medical and Social field.",
+    ],
+  },
+  {
+    title: "Work Experience",
+    items: [
+      "ICU duty doctor in Shankara Cancer Hospital, Bangalore.",
+      "Senior Resident at Sri Sathya Sai Sanjeevani International centre for Pediatric Heart Care, Palwal, Haryana.",
+      "Senior Resident at AIIMS, New Delhi, in the department of CTVS.",
+      "Senior Resident at KVGMC Hospital, Sullia in the department of General Surgery.",
+      "Senior Resident at SCTIMST, Thiruvananthapuram in the department of CTVS.",
+      "Fellow in Minimal Access Surgery at World Laparoscopy Hospital, Gurugram.",
+      "Assistant Professor at AJIMS, Mangalore in the department of Surgery.",
+    ],
+  },
+  {
+    title: "Beyond Surgery",
+    items: [
+      "Founder and Chief of The White Army - Free Online Medical Education platform for more than 3 Lakh members all over the country and abroad.",
+      "Author of Surgery Simplified for Students book.",
+      "Chief Editor and Publisher of Language of Healthcare books in Kannada, Tulu, Bengali, Kokborok, Malayalam, Tamil, Telugu, Hindi, Marathi, Gujarathi, Assamese, Odiya languages; Publisher of Exam Oriented Clinical Neurology book.",
+      "Founder of The Empath Society - to Empower Humanity, an initiative for social service.",
+      "Musician - Carnatic classical vocalist and can play 8 musical instruments proficiently.",
+      "Bangalore Medical College Badminton team Captain and has won more than 30 Inter-college tournaments all over the country. 3 time RGUHS Champions.",
+      "Voluntary blood donation for more than 40 times in last 15 years.",
+      "Public speaker and writer.",
+      "Resource person, mentor and judge for numerous national and international conferences, competitions and events.",
+      "Master of Ceremony for several high profile functions.",
+      "Organizer of multiple National Level Quizzes and competitions, including all time first completely online Medical Quiz.",
+    ],
   },
 ] as const;
 
@@ -192,35 +259,51 @@ export const philosophyPoints = [
 export const books = [
   {
     title: "Language of Healthcare",
-    note: "Written and published by Dr. Kishan Rao",
-    coverImage: "/images/education/formal-suit.jpg",
-    coverAlt: "Dr. Kishan Rao in formal attire",
+    note: "Chief Editor and Publisher of Language of Healthcare books.",
+    actionLabel: "View book",
+    coverImage: "/images/books/language-of-healthcare-cover.webp",
+    coverAlt: "Language of Healthcare English-Kannada Phrase Book cover",
     objectPosition: "center 12%",
   },
   {
     title: "Surgery Simplified for Students",
-    note: "A practical learning companion for medical students",
-    coverImage: "/images/clinical/surgical-portrait.jpg",
-    coverAlt: "Dr. Kishan Rao in surgical attire",
+    note: "Author of Surgery Simplified for Students book.",
+    actionLabel: "Know more",
+    coverImage: "/images/books/surgery-simplified-for-students-cover.webp",
+    coverAlt: "Surgery Simplified for Students book cover",
     objectPosition: "center 8%",
   },
   {
     title: "All in 1 Case Proformas",
     note: "Structured case documentation for clinical training",
+    actionLabel: "Know more",
     coverImage: "/images/about/blue-portrait.jpg",
     coverAlt: "Dr. Kishan Rao professional portrait",
     objectPosition: "center 10%",
+    coverPending: true,
   },
+] as const;
+
+export const publicationDetails = [
+  "Language of Healthcare books in Kannada, Tulu, Bengali, Kokborok, Malayalam, Tamil, Telugu, Hindi, Marathi, Gujarathi, Assamese, Odiya languages.",
+  "Publisher of Exam Oriented Clinical Neurology book.",
 ] as const;
 
 export const socialInitiatives = [
   {
     name: "Empath Society",
-    description: "An initiative created to empower humanity through shared values and community action.",
+    description: "to Empower Humanity",
+    details: [
+      "Organizing free medical camps in Orphanages, Old age homes, Army camps.",
+      "Health awareness sessions in various places.",
+      "Free online consultation for non-COVID patients during the COVID lockdown.",
+    ],
   },
   {
     name: "Hope India",
-    description: "A social-service initiative focused on meaningful community support.",
+    description:
+      "Initiative for serving leftover food in various medical college hostels to the destitute to prevent wastage of food and resources.",
+    details: [],
   },
 ] as const;
 
@@ -241,33 +324,12 @@ export const testimonials = [
   {
     quote:
       "He is very caring and soft spoken. He is a dedicated Doctor. Listens to you very patiently & gives you sufficient time to say your problems.",
-    name: "Nikhil D’Souza",
+    name: "Nikhil D'Souza",
     source: "Previously published on surgeonkishan.com",
   },
 ] as const;
 
-export const galleryItems = [
-  {
-    src: "/images/gallery/surgical-portrait.jpg",
-    alt: "Dr. Kishan Rao in surgical attire",
-    label: "Surgical practice",
-  },
-  {
-    src: "/images/gallery/outdoor-portrait.jpg",
-    alt: "Dr. Kishan Rao outdoors in a white coat",
-    label: "Clinical presence",
-  },
-  {
-    src: "/images/gallery/operation-theatre.jpg",
-    alt: "Dr. Kishan Rao in the operation theatre",
-    label: "Operation theatre",
-  },
-  {
-    src: "/images/gallery/formal-portrait.jpg",
-    alt: "Dr. Kishan Rao in formal attire",
-    label: "Professional portrait",
-  },
-] as const;
+export const galleryItems = originalGalleryItems;
 
 export const blogPreviews = [] as const;
 
@@ -287,6 +349,10 @@ export const images = {
   education: {
     src: "/images/education/formal-suit.jpg",
     alt: "Dr. Kishan Rao in formal attire",
+  },
+  whiteArmy: {
+    src: "/images/organizations/white-army-logo-clean.webp",
+    alt: "The White Army logo by Dr. Kishan Rao",
   },
   clinical: {
     src: "/images/clinical/surgical-portrait.jpg",
@@ -314,7 +380,7 @@ export const images = {
   /** Held back until consent is confirmed for all identifiable people */
   patientConsultation: {
     src: "/images/clinical/patient-consultation-pending-consent.jpg",
-    alt: "Patient consultation image — pending consent confirmation",
+    alt: "Patient consultation image - pending consent confirmation",
     consentRequired: true as const,
   },
 } as const;

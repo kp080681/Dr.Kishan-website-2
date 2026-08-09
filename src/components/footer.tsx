@@ -5,6 +5,7 @@ import {
   IconMail,
   IconPhone,
   IconWhatsApp,
+  IconYouTube,
 } from "@/components/icons";
 import { doctor, navItems } from "@/content/site";
 
@@ -84,6 +85,17 @@ export function Footer() {
                   Facebook
                 </a>
               </li>
+              <li>
+                <a
+                  href={doctor.social.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white/85 hover:text-white"
+                >
+                  <IconYouTube className="h-4 w-4" aria-hidden />
+                  YouTube — The White Army
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -112,6 +124,17 @@ export function Footer() {
           </p>
           <p className="mt-4 text-xs text-white/45">
             © {new Date().getFullYear()} {doctor.name}. All rights reserved.
+          </p>
+          <p className="mt-2 text-xs text-white/40">
+            Developed by{" "}
+            <a
+              href="https://dealup.co.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-4 transition-colors hover:text-white/70 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
+            >
+              DealUp Strategies
+            </a>
           </p>
         </div>
       </div>

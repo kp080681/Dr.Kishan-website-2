@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/site-shell";
@@ -17,8 +18,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug);
   if (!post) return { title: "Blog" };
   return {
-    title: post.title,
-    description: post.summary,
+    title: post.seoTitle ?? post.title,
+    description: post.metaDescription ?? post.summary,
+    openGraph: {
+      title: post.openGraphTitle ?? post.seoTitle ?? post.title,
+      description: post.openGraphDescription ?? post.metaDescription ?? post.summary,
+    },
   };
 }
 
@@ -28,6 +33,9 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const html = renderBlogMarkdown(post.bodyMarkdown);
+  const featuredImagePosition = post.featuredImage.startsWith("/images/gallery/originals/")
+    ? "center top"
+    : "center";
 
   return (
     <SiteShell>
@@ -39,28 +47,33 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="mt-4 text-sm text-ink-muted">
               {post.author}
               {post.publishedAt
-                ? ` · ${new Date(post.publishedAt).toLocaleDateString("en-IN", {
+                ? ` - ${new Date(post.publishedAt).toLocaleDateString("en-IN", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
                   })}`
                 : ""}
             </p>
-            <p className="mt-3 inline-flex rounded-full bg-red-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-red">
-              Medical review pending
-            </p>
 
-            <div
-              className="prose-blog mt-8"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+            <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-surface">
+              <Image
+                src={post.featuredImage}
+                alt=""
+                fill
+                priority
+                className="object-cover"
+                style={{ objectPosition: featuredImagePosition }}
+                sizes="(min-width: 1024px) 860px, 100vw"
+              />
+            </div>
+
+            <div className="prose-blog mt-8" dangerouslySetInnerHTML={{ __html: html }} />
 
             <div className="mt-10 rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-[var(--card-pad)]">
               <h2 className="heading-display heading-card">Medical disclaimer</h2>
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-                This article was migrated from the previous website and has not been newly medically
-                reviewed for this site. It is for general education only and is not a substitute for
-                personal medical advice, diagnosis or treatment. Always consult a qualified clinician for
+                This article is for general education only and is not a substitute for personal
+                medical advice, diagnosis or treatment. Always consult a qualified clinician for
                 individual care decisions.
               </p>
             </div>
@@ -68,8 +81,8 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="surface-dark mt-8 rounded-[var(--radius)] bg-[linear-gradient(135deg,#0b1c33_0%,#14386c_100%)] p-[var(--card-pad)]">
               <h2 className="heading-display heading-card">Book a consultation</h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85">
-                Speak with {doctor.name} about your symptoms and next steps. Appointments are by prior
-                booking.
+                Speak with {doctor.name} about your symptoms and next steps. Appointments are by
+                prior booking.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a href={`tel:${doctor.phoneTel}`} className="btn btn-accent">

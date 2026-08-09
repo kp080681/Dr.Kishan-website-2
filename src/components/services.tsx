@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { services } from "@/content/site";
+import { ExpandablePanel } from "@/components/expandable-panel";
 import { Reveal } from "@/components/reveal";
 import {
   IconArrow,
@@ -29,50 +31,78 @@ export function Services() {
             Surgical care organised around clear clinical pathways
           </h2>
           <p className="lede">
-            Four primary service areas help patients understand where to begin. Detailed
-            service pages will follow in a later phase.
+            Four primary service areas are shown from Dr. Kishan Rao&apos;s visiting card. Open
+            each card to see the complete list in place.
           </p>
         </Reveal>
 
         <div className="section-content grid gap-5 md:grid-cols-2">
           {services.map((service, index) => {
             const Icon = icons[service.id as keyof typeof icons];
+            const previewItems = service.procedures.slice(0, service.previewCount);
+            const hiddenCount = service.procedures.length - previewItems.length;
             return (
               <Reveal
                 key={service.id}
                 as="article"
                 delay={(Math.min(index, 3) + 1) as 1 | 2 | 3 | undefined}
-                className="motion-card group flex h-full flex-col rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-6 shadow-[0_12px_32px_rgba(11,28,51,0.04)] transition-shadow duration-200 hover:shadow-[0_18px_40px_rgba(11,28,51,0.08)]"
+                className="motion-card group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-white shadow-[0_12px_32px_rgba(11,28,51,0.04)] transition-shadow duration-200 hover:shadow-[0_18px_40px_rgba(11,28,51,0.08)]"
               >
-                <div className="flex items-start gap-4">
-                  <span className="service-icon-motion inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <h3 className="heading-display heading-card">{service.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-muted sm:text-base">
-                      {service.description}
-                    </p>
-                  </div>
+                <div className="image-mask relative aspect-[16/10] bg-navy">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 92vw, 38rem"
+                    quality={90}
+                    className="object-cover"
+                    style={{ objectPosition: service.imagePosition }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/62 via-transparent to-transparent" />
                 </div>
-                <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-                  {service.procedures.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-[var(--radius-sm)] bg-surface px-3 py-2 text-sm text-navy-soft"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto pt-5">
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-blue">
-                    Explore Service
-                    <IconArrow className="motion-link-arrow h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                    <span className="sr-only">
-                      (page coming soon for {service.title})
+
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <div className="flex items-start gap-4">
+                    <span className="service-icon-motion inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-soft text-blue">
+                      <Icon className="h-6 w-6" />
                     </span>
-                  </span>
+                    <div>
+                      <h3 className="heading-display heading-card">{service.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-muted sm:text-base">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                    {previewItems.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-[var(--radius-sm)] bg-surface px-3 py-2 text-sm text-navy-soft"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                    {hiddenCount > 0 ? (
+                      <li className="rounded-[var(--radius-sm)] bg-blue-soft px-3 py-2 text-sm font-semibold text-blue">
+                        +{hiddenCount} more
+                      </li>
+                    ) : null}
+                  </ul>
+
+                  <ExpandablePanel className="mt-auto pt-5" label="Know more">
+                    <div className="rounded-[var(--radius-sm)] bg-blue-soft/55 p-4">
+                      <p className="text-sm font-semibold text-navy">Complete visiting-card list</p>
+                      <ul className="mt-3 grid gap-2">
+                        {service.procedures.map((item) => (
+                          <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink-muted">
+                            <IconArrow className="mt-1 h-3.5 w-3.5 shrink-0 text-blue" aria-hidden />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </ExpandablePanel>
                 </div>
               </Reveal>
             );

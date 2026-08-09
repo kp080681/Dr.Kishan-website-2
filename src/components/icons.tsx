@@ -152,6 +152,15 @@ export function IconFacebook(props: IconProps) {
   );
 }
 
+export function IconYouTube(props: IconProps) {
+  return (
+    <BaseIcon {...props}>
+      <path d="M21 8.4a3 3 0 0 0-2.1-2.1C17 5.8 12 5.8 12 5.8s-5 0-6.9.5A3 3 0 0 0 3 8.4a31.2 31.2 0 0 0 0 7.2 3 3 0 0 0 2.1 2.1c1.9.5 6.9.5 6.9.5s5 0 6.9-.5a3 3 0 0 0 2.1-2.1 31.2 31.2 0 0 0 0-7.2Z" />
+      <path d="m10.2 9.4 4.8 2.6-4.8 2.6Z" />
+    </BaseIcon>
+  );
+}
+
 export function IconBook(props: IconProps) {
   return (
     <BaseIcon {...props}>

@@ -1,4 +1,5 @@
 import { doctor, locations } from "@/content/site";
+import { ExpandablePanel } from "@/components/expandable-panel";
 import { Reveal } from "@/components/reveal";
 import { IconCalendar, IconPhone, IconWhatsApp } from "@/components/icons";
 
@@ -44,23 +45,27 @@ export function Locations() {
           ))}
         </div>
 
-        <Reveal className="motion-card mt-6 rounded-[var(--radius)] border border-dashed border-[color:var(--line-strong)] bg-blue-soft/50 p-5 sm:p-6">
-          <h3 className="text-base font-semibold text-navy">Visiting consultations</h3>
-          <p className="mt-2 text-sm text-ink-muted">
-            Availability varies. Confirm before planning a visit.
-          </p>
-          <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-            {visiting.map((item) => (
-              <li
-                key={item.id}
-                className="rounded-[var(--radius-sm)] bg-white/80 px-4 py-3 transition-colors duration-200 hover:bg-white"
-              >
-                <p className="font-semibold text-navy">{item.name}</p>
-                <p className="text-sm text-ink-muted">{item.place}</p>
-                <p className="mt-1 text-sm text-blue">{item.schedule}</p>
-              </li>
-            ))}
-          </ul>
+        <Reveal className="mt-6">
+          <ExpandablePanel label="View all locations & timings">
+            <div className="motion-card rounded-[var(--radius)] border border-dashed border-[color:var(--line-strong)] bg-blue-soft/50 p-5 sm:p-6">
+              <h3 className="text-base font-semibold text-navy">Visiting consultations</h3>
+              <p className="mt-2 text-sm text-ink-muted">
+                Availability varies. Confirm before planning a visit.
+              </p>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+                {visiting.map((item) => (
+                  <li
+                    key={item.id}
+                    className="rounded-[var(--radius-sm)] bg-white/80 px-4 py-3 transition-colors duration-200 hover:bg-white"
+                  >
+                    <p className="font-semibold text-navy">{item.name}</p>
+                    <p className="text-sm text-ink-muted">{item.place}</p>
+                    <p className="mt-1 text-sm text-blue">{item.schedule}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ExpandablePanel>
         </Reveal>
 
         <Reveal className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

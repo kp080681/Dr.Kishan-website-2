@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/reveal";
 import { IconArrow, IconClose } from "@/components/icons";
 
@@ -11,35 +11,131 @@ const reviewScreenshots = [
     src: "/images/testimonials/google-review-geetha-shetty.png",
     width: 833,
     height: 320,
-    featured: true,
   },
   {
     title: "Deepika Harish Google review",
     src: "/images/testimonials/google-review-deepika-harish.png",
     width: 845,
     height: 280,
-    featured: false,
   },
   {
     title: "Deepak Anchan Google review",
     src: "/images/testimonials/google-review-deepak-anchan.png",
     width: 837,
     height: 246,
-    featured: false,
   },
   {
     title: "Pratham Google review",
     src: "/images/testimonials/google-review-pratham.png",
     width: 858,
     height: 272,
-    featured: false,
+  },
+  {
+    title: "Shruthi gs Google review",
+    src: "/images/testimonials/google-review-shruthi-gs.png",
+    width: 835,
+    height: 343,
+  },
+  {
+    title: "Zilani Zilani Google review",
+    src: "/images/testimonials/google-review-zilani-zilani.png",
+    width: 864,
+    height: 441,
+  },
+  {
+    title: "Deepak Anchan recent Google review",
+    src: "/images/testimonials/google-review-deepak-anchan-august.png",
+    width: 843,
+    height: 242,
+  },
+  {
+    title: "Pratham recent Google review",
+    src: "/images/testimonials/google-review-pratham-august.png",
+    width: 853,
+    height: 264,
+  },
+  {
+    title: "Sadik Bareppadi Google review",
+    src: "/images/testimonials/google-review-sadik-bareppadi.png",
+    width: 860,
+    height: 522,
+  },
+  {
+    title: "Narayan Putran Google review",
+    src: "/images/testimonials/google-review-narayan-putran.png",
+    width: 837,
+    height: 317,
+  },
+  {
+    title: "Shivu Pal Google review",
+    src: "/images/testimonials/google-review-shivu-pal.png",
+    width: 854,
+    height: 218,
+  },
+  {
+    title: "PP Venu Google review",
+    src: "/images/testimonials/google-review-pp-venu.png",
+    width: 866,
+    height: 593,
   },
 ] as const;
 
 export function Testimonials() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const activeReview = activeIndex === null ? null : reviewScreenshots[activeIndex];
   const activePosition = activeIndex ?? 0;
+
+  const scrollToReview = (index: number) => {
+    const nextIndex = (index + reviewScreenshots.length) % reviewScreenshots.length;
+    const viewport = carouselRef.current;
+    const nextSlide = viewport?.querySelector<HTMLElement>(
+      `[data-review-index="${nextIndex}"]`,
+    );
+
+    setCarouselIndex(nextIndex);
+    nextSlide?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "nearest",
+      inline: "start",
+    });
+  };
+
+  useEffect(() => {
+    const viewport = carouselRef.current;
+    if (!viewport) return;
+
+    let frame = 0;
+    const updateActiveSlide = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        const slides = Array.from(
+          viewport.querySelectorAll<HTMLElement>("[data-review-index]"),
+        );
+        const viewportLeft = viewport.getBoundingClientRect().left;
+        const closest = slides.reduce(
+          (match, slide) => {
+            const distance = Math.abs(slide.getBoundingClientRect().left - viewportLeft);
+            return distance < match.distance
+              ? { distance, index: Number(slide.dataset.reviewIndex) }
+              : match;
+          },
+          { distance: Number.POSITIVE_INFINITY, index: 0 },
+        );
+
+        setCarouselIndex(closest.index);
+      });
+    };
+
+    updateActiveSlide();
+    viewport.addEventListener("scroll", updateActiveSlide, { passive: true });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      viewport.removeEventListener("scroll", updateActiveSlide);
+    };
+  }, []);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -88,38 +184,90 @@ export function Testimonials() {
           <p className="lede">Original reviews shared by patients and their families.</p>
         </Reveal>
 
-        <div className="section-content grid gap-5 md:grid-cols-2">
-          {reviewScreenshots.map((review, index) => (
-            <Reveal
-              key={review.src}
-              as="article"
-              variant="soft-left"
-              delay={(Math.min(index, 2) + 1) as 1 | 2 | 3}
-              className={`testimonial-motion motion-card overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-3 shadow-[0_12px_30px_rgba(11,28,51,0.05)] sm:p-4 ${
-                review.featured ? "md:col-span-2" : ""
-              }`}
+        <div className="section-content review-carousel" aria-label="Google review screenshots">
+          <div className="review-carousel__controls" aria-label="Review carousel controls">
+            <button
+              type="button"
+              className="review-carousel__button"
+              onClick={() => scrollToReview(carouselIndex - 1)}
+              aria-label="Show previous Google review"
             >
-              <button
-                type="button"
-                className="group block w-full rounded-[calc(var(--radius)-4px)] bg-[#111] p-0 text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
-                onClick={() => setActiveIndex(index)}
-                aria-label={`Open larger ${review.title}`}
-              >
-                <span
-                  className="relative block w-full overflow-hidden rounded-[calc(var(--radius)-4px)]"
-                  style={{ aspectRatio: `${review.width} / ${review.height}` }}
+              <IconArrow className="h-4 w-4 rotate-180" aria-hidden />
+            </button>
+            <button
+              type="button"
+              className="review-carousel__button"
+              onClick={() => scrollToReview(carouselIndex + 1)}
+              aria-label="Show next Google review"
+            >
+              <IconArrow className="h-4 w-4" aria-hidden />
+            </button>
+          </div>
+
+          <div
+            ref={carouselRef}
+            className="review-carousel__viewport"
+            tabIndex={0}
+            role="region"
+            aria-label="Swipe or use arrow buttons to browse Google review screenshots"
+            onKeyDown={(event) => {
+              if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                scrollToReview(carouselIndex - 1);
+              }
+
+              if (event.key === "ArrowRight") {
+                event.preventDefault();
+                scrollToReview(carouselIndex + 1);
+              }
+            }}
+          >
+            <div className="review-carousel__track">
+              {reviewScreenshots.map((review, index) => (
+                <Reveal
+                  key={review.src}
+                  as="article"
+                  variant="soft-left"
+                  delay={(Math.min(index, 2) + 1) as 1 | 2 | 3}
+                  className="review-carousel__slide testimonial-motion motion-card"
                 >
-                  <Image
-                    src={review.src}
-                    alt={review.title}
-                    fill
-                    sizes={review.featured ? "(max-width: 768px) 92vw, 72rem" : "(max-width: 768px) 92vw, 36rem"}
-                    className="object-contain transition-transform duration-300 group-hover:scale-[1.01]"
-                  />
-                </span>
-              </button>
-            </Reveal>
-          ))}
+                  <button
+                    type="button"
+                    className="review-carousel__card"
+                    data-review-index={index}
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Open larger ${review.title}, ${index + 1} of ${reviewScreenshots.length}`}
+                  >
+                    <span className="review-carousel__image-frame">
+                      <Image
+                        src={review.src}
+                        alt={review.title}
+                        width={review.width}
+                        height={review.height}
+                        sizes="(max-width: 767px) 88vw, (max-width: 1023px) 44vw, 27vw"
+                        className="review-carousel__image"
+                        loading="eager"
+                      />
+                    </span>
+                  </button>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          <div className="review-carousel__dots" aria-label="Choose a Google review">
+            {reviewScreenshots.map((review, index) => (
+              <button
+                key={review.src}
+                type="button"
+                className="review-carousel__dot"
+                data-active={carouselIndex === index}
+                onClick={() => scrollToReview(index)}
+                aria-label={`Show ${review.title}`}
+                aria-current={carouselIndex === index ? "true" : undefined}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -149,14 +297,14 @@ export function Testimonials() {
                 className="relative mx-auto w-full overflow-hidden"
                 style={{ aspectRatio: `${activeReview.width} / ${activeReview.height}` }}
               >
-                <Image
-                  src={activeReview.src}
-                  alt={activeReview.title}
-                  fill
-                  sizes="(max-width: 768px) 96vw, 64rem"
-                  className="object-contain"
-                  priority
-                />
+                  <Image
+                    src={activeReview.src}
+                    alt={activeReview.title}
+                    fill
+                    sizes="(max-width: 768px) 96vw, 64rem"
+                    className="object-contain"
+                    priority
+                  />
               </div>
             </div>
 

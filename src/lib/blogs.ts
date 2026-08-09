@@ -77,6 +77,10 @@ export function renderBlogMarkdown(md: string): string {
       flushList();
       continue;
     }
+    if (/^!\[[^\]]*]\([^)]+\)$/.test(line.trim())) {
+      flushList();
+      continue;
+    }
     const heading = line.match(/^(#{1,4})\s+(.*)$/);
     if (heading) {
       flushList();
