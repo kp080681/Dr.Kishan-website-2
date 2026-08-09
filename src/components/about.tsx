@@ -9,15 +9,14 @@ export function About() {
       <div className="container-site grid items-start gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-14">
         <Reveal variant="image" className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
           <div className="image-mask relative overflow-hidden rounded-[1.25rem] border border-[color:var(--line)] bg-blue-deep shadow-[var(--shadow)]">
-            <div className="relative aspect-[3/4]">
+            <div className="about-portrait-frame relative">
               <Image
                 src={images.about.src}
                 alt={images.about.alt}
                 fill
                 sizes="(max-width: 1024px) 90vw, 38vw"
                 quality={90}
-                className="object-cover"
-                style={{ objectPosition: "center 18%" }}
+                className="about-portrait-image object-cover"
               />
             </div>
           </div>

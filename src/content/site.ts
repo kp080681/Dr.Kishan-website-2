@@ -85,7 +85,6 @@ export const services = [
   {
     id: "laser",
     title: "LASER SURGERY",
-    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: [
       "Varicose Veins (EVLA)",
       "Piles (Hemorrhoids)",
@@ -101,7 +100,6 @@ export const services = [
   {
     id: "laparoscopic",
     title: "LAPAROSCOPIC SURGERY",
-    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: ["Gallbladder Stones", "Appendix", "Hernia", "Diagnostic Laparoscopy"],
     previewCount: 3,
     image: "/images/gallery/originals/2026-02-23-scrubs-colleague.jpg",
@@ -111,7 +109,6 @@ export const services = [
   {
     id: "general",
     title: "GENERAL SURGERY",
-    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: [
       "Hernia Surgery",
       "Breast Surgery",
@@ -129,7 +126,6 @@ export const services = [
   {
     id: "vascular",
     title: "VASCULAR SURGERY",
-    description: "Services listed exactly as on Dr. Kishan Rao's visiting card.",
     procedures: [
       "Varicose Veins",
       "Venous Ulcers",

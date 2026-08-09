@@ -68,13 +68,10 @@ export function Services() {
                     </span>
                     <div>
                       <h3 className="heading-display heading-card">{service.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-ink-muted sm:text-base">
-                        {service.description}
-                      </p>
                     </div>
                   </div>
 
-                  <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                  <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                     {previewItems.map((item) => (
                       <li
                         key={item}

@@ -576,6 +576,24 @@ button {
   transform: translateY(-1px);
 }
 
+.about-portrait-frame {
+  aspect-ratio: 2 / 3;
+}
+
+.about-portrait-image {
+  object-position: center top;
+}
+
+@media (min-width: 640px) {
+  .about-portrait-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  .about-portrait-image {
+    object-position: center 18%;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
   .review-carousel__viewport {
     margin-block: -1.35rem -1rem;
