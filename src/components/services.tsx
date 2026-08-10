@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { services } from "@/content/site";
-import { ExpandablePanel } from "@/components/expandable-panel";
 import { Reveal } from "@/components/reveal";
 import {
   IconGeneral,
@@ -68,18 +67,22 @@ function ProcedureDefinitionItem({
   item,
   isOpen,
   onToggle,
+  className = "",
 }: {
   item: ProcedureName;
   isOpen: boolean;
   onToggle: () => void;
+  className?: string;
 }) {
   const contentId = `service-definition-${item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
-    <li className="rounded-[var(--radius-sm)] bg-white/70 text-sm leading-relaxed text-ink-muted ring-1 ring-[color:var(--line)]">
+    <li
+      className={`rounded-[var(--radius-sm)] bg-surface text-sm leading-relaxed text-ink-muted ring-1 ring-[color:var(--line)] ${className}`}
+    >
       <button
         type="button"
-        className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left font-medium text-navy-soft transition-colors duration-150 hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+        className="flex min-h-11 w-full cursor-pointer items-center justify-between gap-3 px-3 py-2 text-left font-medium text-navy-soft transition-colors duration-150 hover:bg-blue-soft/55 hover:text-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
         aria-expanded={isOpen}
         aria-controls={contentId}
         onClick={onToggle}
@@ -152,6 +155,8 @@ function ServiceCard({
   delay: 1 | 2 | 3 | undefined;
 }) {
   const [openProcedure, setOpenProcedure] = useState<ProcedureName | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const visibleItems = (showAll ? service.procedures : previewItems) as readonly ProcedureName[];
 
   return (
     <Reveal
@@ -183,36 +188,31 @@ function ServiceCard({
         </div>
 
         <ul className="mt-6 grid gap-2 sm:grid-cols-2">
-          {previewItems.map((item) => (
-            <li
+          {visibleItems.map((item) => (
+            <ProcedureDefinitionItem
               key={item}
-              className="rounded-[var(--radius-sm)] bg-surface px-3 py-2 text-sm text-navy-soft"
-            >
-              {item}
-            </li>
+              item={item}
+              isOpen={openProcedure === item}
+              onToggle={() => setOpenProcedure((current) => (current === item ? null : item))}
+              className="bg-surface"
+            />
           ))}
           {hiddenCount > 0 ? (
-            <li className="rounded-[var(--radius-sm)] bg-blue-soft px-3 py-2 text-sm font-semibold text-blue">
-              +{hiddenCount} more
+            <li>
+              <button
+                type="button"
+                className="flex min-h-11 w-full cursor-pointer items-center justify-center rounded-[var(--radius-sm)] bg-blue-soft px-3 py-2 text-sm font-semibold text-blue transition-colors duration-150 hover:bg-blue hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+                aria-expanded={showAll}
+                onClick={() => {
+                  setShowAll((current) => !current);
+                  setOpenProcedure(null);
+                }}
+              >
+                {showAll ? "Show less" : `+${hiddenCount} more`}
+              </button>
             </li>
           ) : null}
         </ul>
-
-        <ExpandablePanel className="mt-auto pt-5" label="Know more">
-          <div className="rounded-[var(--radius-sm)] bg-blue-soft/55 p-4">
-            <p className="text-sm font-semibold text-navy">Conditions &amp; procedures</p>
-            <ul className="mt-3 grid gap-2">
-              {service.procedures.map((item) => (
-                <ProcedureDefinitionItem
-                  key={item}
-                  item={item}
-                  isOpen={openProcedure === item}
-                  onToggle={() => setOpenProcedure((current) => (current === item ? null : item))}
-                />
-              ))}
-            </ul>
-          </div>
-        </ExpandablePanel>
       </div>
     </Reveal>
   );

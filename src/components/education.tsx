@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { books, doctor, images, publicationDetails, socialInitiatives } from "@/content/site";
 import { CountUp } from "@/components/count-up";
 import { ExpandablePanel } from "@/components/expandable-panel";
@@ -6,6 +9,8 @@ import { Reveal } from "@/components/reveal";
 import { IconBook, IconFacebook, IconHeart, IconInstagram, IconUsers } from "@/components/icons";
 
 export function Education() {
+  const [openBook, setOpenBook] = useState<string | null>(null);
+
   return (
     <section
       className="living-section depth-light section-pad"
@@ -50,7 +55,7 @@ export function Education() {
           <p className="mt-5 text-base leading-relaxed text-ink-muted">
             As a Career Counsellor and Motivational Mentor, he also guides students under the
             public education identity{" "}
-            <span className="font-semibold text-navy">{doctor.social.handle}</span> —
+            <span className="font-semibold text-navy">{doctor.social.handle}</span>,
             a name used only in this educational and social-media context.
           </p>
           <ExpandablePanel className="mt-6" label="Know more">
@@ -87,47 +92,97 @@ export function Education() {
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3">
-                {books.map((book) => (
-                  <article
-                    key={book.title}
-                    className={`flex h-full flex-col overflow-hidden rounded-[var(--radius-sm)] bg-surface ${
-                      "coverPending" in book && book.coverPending ? "p-4" : ""
-                    }`}
-                  >
-                    {"coverPending" in book && book.coverPending ? (
-                      <div className="flex flex-1 flex-col">
-                        <IconBook className="h-5 w-5 text-blue" aria-hidden />
-                        <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
-                        <span className="mt-auto pt-4 text-sm font-semibold text-blue">
-                          {book.actionLabel}
-                        </span>
-                      </div>
-                    ) : (
-                      <>
-                        <div className="relative aspect-[3/4] bg-navy/5">
-                          <Image
-                            src={book.coverImage}
-                            alt={book.coverAlt}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
-                            className="object-contain"
-                            style={{ objectPosition: book.objectPosition }}
-                          />
-                        </div>
-                        <div className="flex flex-1 flex-col p-4">
+                {books.map((book) => {
+                  const hasDetails = book.details.length > 0;
+                  const actionLabel = "actionLabel" in book ? book.actionLabel : null;
+                  const isOpen = openBook === book.title;
+                  const detailsId = `education-publication-${book.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
+                  return (
+                    <article
+                      key={book.title}
+                      className={`flex h-full flex-col overflow-hidden rounded-[var(--radius-sm)] bg-surface ${
+                        "coverPending" in book && book.coverPending ? "p-4" : ""
+                      }`}
+                    >
+                      {hasDetails && actionLabel ? (
+                        <>
+                          <button
+                            type="button"
+                            className="group flex h-full cursor-pointer flex-col text-left transition-colors duration-150 hover:bg-blue-soft/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+                            aria-expanded={isOpen}
+                            aria-controls={detailsId}
+                            onClick={() =>
+                              setOpenBook((current) =>
+                                current === book.title ? null : book.title,
+                              )
+                            }
+                          >
+                            <div className="relative aspect-[3/4] bg-navy/5">
+                              <Image
+                                src={book.coverImage}
+                                alt={book.coverAlt}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
+                                className="object-contain"
+                                style={{ objectPosition: book.objectPosition }}
+                              />
+                            </div>
+                            <div className="flex flex-1 flex-col p-4">
+                              <IconBook className="h-5 w-5 text-blue" aria-hidden />
+                              <h4 className="mt-3 text-sm font-semibold text-navy group-hover:text-blue">
+                                {book.title}
+                              </h4>
+                              <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
+                                {book.note}
+                              </p>
+                              <span className="mt-4 text-sm font-semibold text-blue">
+                                {actionLabel}
+                              </span>
+                            </div>
+                          </button>
+                          {isOpen ? (
+                            <div
+                              id={detailsId}
+                              className="m-3 mt-0 rounded-[var(--radius-sm)] bg-blue-soft/55 p-3 text-sm leading-relaxed text-ink-muted"
+                            >
+                              {book.details.map((detail) => (
+                                <p key={detail} className="mt-2 first:mt-0">
+                                  {detail}
+                                </p>
+                              ))}
+                            </div>
+                          ) : null}
+                        </>
+                      ) : "coverPending" in book && book.coverPending ? (
+                        <div className="flex flex-1 flex-col">
                           <IconBook className="h-5 w-5 text-blue" aria-hidden />
                           <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
-                          <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
-                            {book.note}
-                          </p>
-                          <span className="mt-4 text-sm font-semibold text-blue">
-                            {book.actionLabel}
-                          </span>
                         </div>
-                      </>
-                    )}
-                  </article>
-                ))}
+                      ) : (
+                        <>
+                          <div className="relative aspect-[3/4] bg-navy/5">
+                            <Image
+                              src={book.coverImage}
+                              alt={book.coverAlt}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
+                              className="object-contain"
+                              style={{ objectPosition: book.objectPosition }}
+                            />
+                          </div>
+                          <div className="flex flex-1 flex-col p-4">
+                            <IconBook className="h-5 w-5 text-blue" aria-hidden />
+                            <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
+                            <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
+                              {book.note}
+                            </p>
+                          </div>
+                        </>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
 
               <div className="rounded-[var(--radius-sm)] bg-blue-soft/55 p-4">

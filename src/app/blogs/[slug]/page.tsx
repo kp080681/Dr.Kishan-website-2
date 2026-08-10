@@ -9,6 +9,22 @@ import { IconPhone, IconWhatsApp } from "@/components/icons";
 
 type Props = { params: Promise<{ slug: string }> };
 
+function isOldBookingHeading(text: string) {
+  const normalized = text
+    .toLowerCase()
+    .replace(/[?:]+$/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return (
+    normalized.startsWith("how may we assist") ||
+    normalized.startsWith("how can we assist") ||
+    normalized.startsWith("how can we help") ||
+    normalized.startsWith("how we can help") ||
+    normalized.startsWith("how may we be of assistance")
+  );
+}
+
 export function generateStaticParams() {
   return getBlogSlugs().map((slug) => ({ slug }));
 }
@@ -33,6 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const html = renderBlogMarkdown(post.bodyMarkdown);
+  const publicHeadings = post.headings.filter((heading) => !isOldBookingHeading(heading.text));
   const featuredImagePosition = post.featuredImage.startsWith("/images/gallery/originals/")
     ? "center top"
     : "center";
@@ -106,8 +123,8 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="sticky top-[calc(var(--header-h)+1rem)] rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-5">
               <p className="text-sm font-semibold text-navy">Table of contents</p>
               <nav className="mt-3 space-y-2" aria-label="Article contents">
-                {post.headings.length ? (
-                  post.headings.map((h) => (
+                {publicHeadings.length ? (
+                  publicHeadings.map((h) => (
                     <a
                       key={h.id + h.text}
                       href={`#${h.id}`}

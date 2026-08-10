@@ -260,6 +260,10 @@ export const books = [
     coverImage: "/images/books/language-of-healthcare-cover.webp",
     coverAlt: "Language of Healthcare English-Kannada Phrase Book cover",
     objectPosition: "center 12%",
+    details: [
+      "Language of Healthcare is an English-Kannada phrase book from The White Army Publication.",
+      "The book is titled Articulate to Treat and supports clearer healthcare communication across languages.",
+    ],
   },
   {
     title: "Surgery Simplified for Students",
@@ -268,15 +272,19 @@ export const books = [
     coverImage: "/images/books/surgery-simplified-for-students-cover.webp",
     coverAlt: "Surgery Simplified for Students book cover",
     objectPosition: "center 8%",
+    details: [
+      "Surgery Simplified for Students is authored by Dr. Kishan Rao for medical learners.",
+      "The publication presents surgical learning material in a student-friendly format.",
+    ],
   },
   {
     title: "All in 1 Case Proformas",
     note: "Structured case documentation for clinical training",
-    actionLabel: "Know more",
     coverImage: "/images/about/blue-portrait.jpg",
     coverAlt: "Dr. Kishan Rao professional portrait",
     objectPosition: "center 10%",
     coverPending: true,
+    details: [] as const,
   },
 ] as const;
 

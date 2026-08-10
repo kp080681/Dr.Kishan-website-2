@@ -246,7 +246,7 @@ export function Testimonials() {
                         height={review.height}
                         sizes="(max-width: 767px) 88vw, (max-width: 1023px) 44vw, 27vw"
                         className="review-carousel__image"
-                        loading="eager"
+                        loading={index === 0 ? "eager" : "lazy"}
                       />
                     </span>
                   </button>
