@@ -31,8 +31,7 @@ export function Services() {
             Surgical care organised around clear clinical pathways
           </h2>
           <p className="lede">
-            Four primary service areas are shown from Dr. Kishan Rao&apos;s visiting card. Open
-            each card to see the complete list in place.
+            Explore Dr. Kishan Rao&apos;s areas of surgical care.
           </p>
         </Reveal>
 
@@ -89,7 +88,7 @@ export function Services() {
 
                   <ExpandablePanel className="mt-auto pt-5" label="Know more">
                     <div className="rounded-[var(--radius-sm)] bg-blue-soft/55 p-4">
-                      <p className="text-sm font-semibold text-navy">Complete visiting-card list</p>
+                      <p className="text-sm font-semibold text-navy">Conditions &amp; procedures</p>
                       <ul className="mt-3 grid gap-2">
                         {service.procedures.map((item) => (
                           <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink-muted">

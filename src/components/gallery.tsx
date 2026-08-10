@@ -87,8 +87,7 @@ export function Gallery() {
             A closer look at clinical and professional life
           </h2>
           <p className="lede">
-            A curated preview from clinical, teaching and public-service moments, with the
-            complete client-supplied archive available in place.
+            A curated preview from clinical, teaching and public-service moments.
           </p>
         </Reveal>
 

@@ -90,40 +90,42 @@ export function Education() {
                 {books.map((book) => (
                   <article
                     key={book.title}
-                    className="flex h-full flex-col overflow-hidden rounded-[var(--radius-sm)] bg-surface"
+                    className={`flex h-full flex-col overflow-hidden rounded-[var(--radius-sm)] bg-surface ${
+                      "coverPending" in book && book.coverPending ? "p-4" : ""
+                    }`}
                   >
                     {"coverPending" in book && book.coverPending ? (
-                      <div className="flex aspect-[3/4] flex-col items-center justify-center bg-navy/5 px-4 text-center">
-                        <IconBook className="h-8 w-8 text-blue" aria-hidden />
-                        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-ink-muted">
-                          Publication
-                        </p>
-                        <p className="mt-2 text-sm font-semibold leading-snug text-navy">
-                          Clinical training resource
-                        </p>
+                      <div className="flex flex-1 flex-col">
+                        <IconBook className="h-5 w-5 text-blue" aria-hidden />
+                        <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
+                        <span className="mt-auto pt-4 text-sm font-semibold text-blue">
+                          {book.actionLabel}
+                        </span>
                       </div>
                     ) : (
-                      <div className="relative aspect-[3/4] bg-navy/5">
-                        <Image
-                          src={book.coverImage}
-                          alt={book.coverAlt}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
-                          className="object-contain"
-                          style={{ objectPosition: book.objectPosition }}
-                        />
-                      </div>
+                      <>
+                        <div className="relative aspect-[3/4] bg-navy/5">
+                          <Image
+                            src={book.coverImage}
+                            alt={book.coverAlt}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
+                            className="object-contain"
+                            style={{ objectPosition: book.objectPosition }}
+                          />
+                        </div>
+                        <div className="flex flex-1 flex-col p-4">
+                          <IconBook className="h-5 w-5 text-blue" aria-hidden />
+                          <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
+                          <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
+                            {book.note}
+                          </p>
+                          <span className="mt-4 text-sm font-semibold text-blue">
+                            {book.actionLabel}
+                          </span>
+                        </div>
+                      </>
                     )}
-                    <div className="flex flex-1 flex-col p-4">
-                      <IconBook className="h-5 w-5 text-blue" aria-hidden />
-                      <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
-                      <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
-                        {book.note}
-                      </p>
-                      <span className="mt-4 text-sm font-semibold text-blue">
-                        {book.actionLabel}
-                      </span>
-                    </div>
                   </article>
                 ))}
               </div>
