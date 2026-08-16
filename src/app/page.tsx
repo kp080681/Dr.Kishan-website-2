@@ -1,8 +1,12 @@
 import { About } from "@/components/about";
 import { Blogs } from "@/components/blogs";
+import { Books } from "@/components/books";
 import { ConsultationCta } from "@/components/consultation-cta";
+import { CredibilityCounters } from "@/components/credibility-counters";
 import { Education } from "@/components/education";
+import { Faqs } from "@/components/faqs";
 import { Footer } from "@/components/footer";
+import { FloatingCta } from "@/components/floating-cta";
 import { Gallery } from "@/components/gallery";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
@@ -17,17 +21,21 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <Locations />
+        <CredibilityCounters />
         <Services />
+        <Locations />
         <About />
         <Philosophy />
         <Education />
+        <Books />
         <Testimonials />
         <Gallery />
+        <Faqs />
         <Blogs />
         <ConsultationCta />
       </main>
       <Footer />
+      <FloatingCta />
     </>
   );
 }

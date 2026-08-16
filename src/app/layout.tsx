@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Dr. Kishan Rao",
   },
   description:
-    "Consult Dr. Kishan Rao — MBBS (BMC), MS (Gold Medalist), FMAS, DMAS — for general, laparoscopic, LASER and selected vascular surgical care across Mangalore and Dakshina Kannada.",
+    "Consult Dr. Kishan Rao — MBBS (BMC), MS (Gold Medalist), FMAS, DMAS — for general, laparoscopic and LASER surgical care across Mangalore and Dakshina Kannada.",
   keywords: [
     "Dr. Kishan Rao",
     "General Surgeon Mangalore",
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/brand/surgeon-kishan-favicon.png", sizes: "64x64", type: "image/png" },
-      { url: "/images/brand/surgeon-kishan-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/brand/dr-kishan-rao-balila-favicon.png", sizes: "64x64", type: "image/png" },
+      { url: "/images/brand/dr-kishan-rao-balila-icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: [{ url: "/images/brand/surgeon-kishan-apple-touch.png", sizes: "180x180" }],
+    apple: [{ url: "/images/brand/dr-kishan-rao-balila-apple-touch.png", sizes: "180x180" }],
   },
 };
 

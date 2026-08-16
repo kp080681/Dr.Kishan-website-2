@@ -10,7 +10,7 @@ export type BlogIndexItem = Omit<
 };
 
 function isPublicPost(post: BlogPost) {
-  return !(post.migrationStatus === "new" && post.medicalReviewStatus === "pending");
+  return post.migrationStatus === "new";
 }
 
 function isOldBookingHeading(text: string) {
@@ -114,6 +114,8 @@ export function renderBlogMarkdown(md: string): string {
 
   const inline = (text: string) =>
     text
+      .replace(/\bDr\.?\s*Kishan\s*Rao\b/g, "Dr. Kishan Rao")
+      .replace(/\bDr\s+kishan\s+rao\b/gi, "Dr. Kishan Rao")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")

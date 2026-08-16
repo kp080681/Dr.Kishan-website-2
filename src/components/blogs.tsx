@@ -7,19 +7,32 @@ import { getBlogIndex } from "@/lib/blogs";
 
 export function Blogs() {
   const posts = getBlogIndex();
-  const featuredPosts = posts.slice(0, 3);
-  const remainingPosts = posts.slice(3);
-  const getFeaturedImagePosition = (src: string) =>
-    src.startsWith("/images/gallery/originals/") ? "center top" : "center";
+  const prioritySlugs = [
+    "laser-treatment-varicose-veins",
+    "how-to-prevent-hemorrhoids",
+    "how-to-manage-a-hernia",
+  ];
+  const priorityPosts = prioritySlugs
+    .map((slug) => posts.find((post) => post.slug === slug))
+    .filter((post): post is (typeof posts)[number] => Boolean(post));
+  const featuredPosts = priorityPosts.length === 3 ? priorityPosts : posts.slice(0, 3);
+  const featuredSlugs = new Set(featuredPosts.map((post) => post.slug));
+  const remainingPosts = posts.filter((post) => !featuredSlugs.has(post.slug));
+  const editorialImages: Record<string, string> = {
+    "laser-treatment-varicose-veins": "/images/blogs/editorial/blog-varicose-evla-editorial-art.jpg",
+    "how-to-prevent-hemorrhoids": "/images/blogs/editorial/blog-hemorrhoids-habits-editorial-art.jpg",
+    "how-to-manage-a-hernia": "/images/blogs/editorial/blog-hernia-editorial-art.jpg",
+  };
 
   return (
     <section
       id="blogs"
-      className="living-section section-pad bg-[linear-gradient(180deg,rgba(240,236,230,0.7)_0%,#f7f5f2_100%)]"
+      className="blogs-editorial-section section-pad"
       aria-labelledby="blogs-heading"
     >
       <div className="container-site">
-        <Reveal className="section-head">
+        <div className="blogs-editorial-layout">
+          <Reveal className="section-head blogs-editorial-head">
           <p className="eyebrow">Blogs</p>
           <h2 id="blogs-heading" className="heading-display heading-xl">
             Educational topics for patients and learners
@@ -28,47 +41,59 @@ export function Blogs() {
             Clear patient-education articles on surgical conditions, treatment options and
             recovery.
           </p>
-        </Reveal>
+            <Link href="/blogs" className="blogs-editorial-view-all">
+              View all articles
+              <IconArrow className="motion-link-arrow h-4 w-4" aria-hidden />
+            </Link>
+          </Reveal>
 
-        <div className="section-content grid gap-5 md:grid-cols-3">
+          <div className="blog-editorial-grid">
           {featuredPosts.map((post, index) => (
             <Reveal
               key={post.slug}
               as="article"
               delay={(Math.min(index, 2) + 1) as 1 | 2 | 3}
-              className="motion-card group flex h-full flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-white"
+              className={`group blog-editorial-card ${
+                index === 0 ? "blog-editorial-card--lead" : ""
+              }`}
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="blog-editorial-card__media relative">
                 <Image
-                  src={post.featuredImage}
+                  src={editorialImages[post.slug] ?? post.featuredImage}
                   alt=""
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  style={{ objectPosition: getFeaturedImagePosition(post.featuredImage) }}
-                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="transition duration-500 group-hover:scale-[1.035]"
+                  sizes={
+                    index === 0
+                      ? "(min-width: 1024px) 58vw, 100vw"
+                      : "(min-width: 1024px) 32vw, 100vw"
+                  }
                 />
               </div>
-              <div className="flex flex-1 flex-col p-[var(--card-pad)]">
-                {post.publishedAt ? (
-                  <p className="text-sm text-ink-muted">
+              <div className="blog-editorial-card__body">
+                <div className="blog-editorial-card__meta">
+                  {post.category ? <span>{post.category}</span> : null}
+                  {post.publishedAt ? (
+                    <time dateTime={post.publishedAt}>
                     {new Date(post.publishedAt).toLocaleDateString("en-IN", {
                       day: "numeric",
                       month: "short",
                       year: "numeric",
                     })}
-                  </p>
-                ) : null}
-                <h3 className="heading-display heading-card mt-3">
-                  <Link href={`/blogs/${post.slug}`} className="hover:text-blue">
+                    </time>
+                  ) : null}
+                </div>
+                <h3 className="heading-display blog-editorial-card__title">
+                  <Link href={`/blogs/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
+                <p className="blog-editorial-card__excerpt">
                   {post.excerpt}
                 </p>
                 <Link
                   href={`/blogs/${post.slug}`}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue"
+                  className="blog-editorial-card__link"
                 >
                   Read article
                   <IconArrow className="motion-link-arrow h-4 w-4" aria-hidden />
@@ -76,27 +101,44 @@ export function Blogs() {
               </div>
             </Reveal>
           ))}
+          </div>
         </div>
 
         {remainingPosts.length > 0 ? (
-          <ExpandablePanel className="mt-8" label="View all blogs">
-            <div className="grid gap-3 rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-4 sm:p-5">
+          <ExpandablePanel
+            className="blogs-editorial-more"
+            controlsClassName="expandable-trigger--on-dark"
+            label="View all blogs"
+          >
+            <div className="blogs-editorial-more__grid">
               {remainingPosts.map((post) => (
                 <article
                   key={post.slug}
-                  className="grid gap-2 rounded-[var(--radius-sm)] bg-surface p-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+                  className="blogs-editorial-row"
                 >
                   <div>
-                    <h3 className="text-base font-semibold leading-snug text-navy">
-                      <Link href={`/blogs/${post.slug}`} className="hover:text-blue">
+                    <div className="blog-editorial-card__meta">
+                      {post.category ? <span>{post.category}</span> : null}
+                      {post.publishedAt ? (
+                        <time dateTime={post.publishedAt}>
+                          {new Date(post.publishedAt).toLocaleDateString("en-IN", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
+                        </time>
+                      ) : null}
+                    </div>
+                    <h3>
+                      <Link href={`/blogs/${post.slug}`}>
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-muted">{post.excerpt}</p>
+                    <p>{post.excerpt}</p>
                   </div>
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue"
+                    className="blogs-editorial-row__link"
                   >
                     Read article
                     <IconArrow className="motion-link-arrow h-4 w-4" aria-hidden />

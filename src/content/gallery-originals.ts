@@ -436,13 +436,18 @@ const allOriginalGalleryItems = [
 ] as const;
 
 const displayedGallerySources = [
-  "/images/gallery/originals/2025-11-03-speaking-award.jpg",
-  "/images/gallery/originals/2026-05-25-large-audience-talk.jpg",
-  "/images/gallery/originals/2026-02-23-office-recognition.jpg",
+  "/images/gallery/originals/2026-07-12-surgical-portrait.jpg",
+  "/images/gallery/originals/2026-02-23-operation-theatre-team.jpg",
+  "/images/gallery/originals/2026-02-23-scrubs-colleague.jpg",
+  "/images/gallery/originals/2025-11-03-clinic-consultation.jpg",
+  "/images/gallery/originals/2026-07-12-clinical-consultation.jpg",
   "/images/gallery/originals/2026-06-24-conference-portrait.jpg",
-  "/images/gallery/originals/2026-07-22-stage-bouquet.jpg",
+  "/images/gallery/originals/2026-05-25-large-audience-talk.jpg",
+  "/images/gallery/originals/2025-11-03-speaking-award.jpg",
+  "/images/gallery/originals/2026-02-23-office-recognition.jpg",
   "/images/gallery/originals/2025-11-03-stage-felicitation.jpg",
   "/images/gallery/originals/2026-07-12-doctors-day-felicitation.jpg",
+  "/images/gallery/originals/2026-07-22-stage-bouquet.jpg",
   "/images/gallery/originals/2026-07-22-school-education-talk.jpg",
   "/images/gallery/originals/2026-02-23-community-stage-talk.jpg",
   "/images/gallery/originals/2026-02-23-honour-ceremony.jpg",

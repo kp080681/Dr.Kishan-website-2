@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IconClose, IconMenu, IconWhatsApp } from "@/components/icons";
 import { doctor, images, navItems } from "@/content/site";
 
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("/#home");
+  const heroHeader = pathname === "/" && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => {
@@ -56,10 +59,11 @@ export function Header() {
 
   return (
     <header
+      data-hero={heroHeader ? "true" : "false"}
       className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,box-shadow,border-color] duration-200 ${
         scrolled || open
           ? "border-[color:var(--line)] bg-[color:rgba(251,250,248,0.94)] shadow-[0_8px_28px_rgba(11,28,51,0.08)] backdrop-blur-md"
-          : "border-transparent bg-[color:rgba(251,250,248,0.72)] backdrop-blur-sm"
+          : "border-white/10 bg-[color:rgba(4,13,35,0.62)] backdrop-blur-md"
       }`}
       style={{ height: "var(--header-h)" }}
     >
@@ -69,21 +73,29 @@ export function Header() {
           className="flex min-w-0 flex-1 items-center gap-3.5 rounded-[var(--radius-sm)] py-1.5 pr-2 min-[1200px]:flex-none min-[1200px]:gap-4 min-[1200px]:pr-0"
           onClick={() => setOpen(false)}
         >
-          <span className="relative h-[46px] w-[46px] shrink-0 overflow-hidden rounded-full border border-red/25 bg-white p-1 shadow-[0_8px_20px_rgba(11,28,51,0.08)] sm:h-[50px] sm:w-[50px] md:h-[54px] md:w-[54px]">
+          <span className="relative h-[54px] w-[54px] shrink-0 overflow-hidden rounded-full border border-[color:rgba(216,166,79,0.42)] bg-navy p-1.5 shadow-[0_8px_20px_rgba(11,28,51,0.12)] sm:h-[58px] sm:w-[58px] md:h-[62px] md:w-[62px]">
             <Image
               src={images.logo.src}
               alt={images.logo.alt}
               fill
-              sizes="54px"
+              sizes="62px"
               priority
-              className="object-contain p-1"
+              className="object-contain p-0.5"
             />
           </span>
           <span className="min-w-0 leading-none">
-            <span className="block whitespace-nowrap text-[0.92rem] font-semibold leading-tight text-navy sm:text-base">
-              {doctor.name}
+            <span
+              className={`block whitespace-nowrap text-[0.76rem] font-semibold leading-tight min-[360px]:text-[0.84rem] sm:text-base ${
+                heroHeader ? "text-white" : "text-navy"
+              }`}
+            >
+              {doctor.brandName}
             </span>
-            <span className="mt-1 block whitespace-nowrap text-[0.53rem] font-medium leading-tight text-ink-muted min-[360px]:text-[0.625rem] sm:text-[0.72rem] md:text-[0.76rem] xl:text-[0.8rem]">
+            <span
+              className={`mt-1 block whitespace-nowrap text-[0.48rem] font-medium leading-tight min-[360px]:text-[0.56rem] sm:text-[0.72rem] md:text-[0.76rem] xl:text-[0.8rem] ${
+                heroHeader ? "text-white/72" : "text-ink-muted"
+              }`}
+            >
               {doctor.primaryRole}
             </span>
           </span>
@@ -108,7 +120,11 @@ export function Header() {
         <div className="flex shrink-0 items-center min-[1200px]:hidden">
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-[var(--radius-sm)] border border-[color:var(--line-strong)] text-navy min-[1200px]:hidden"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-[var(--radius-sm)] border min-[1200px]:hidden ${
+              heroHeader
+                ? "border-white/25 text-white"
+                : "border-[color:var(--line-strong)] text-navy"
+            }`}
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}

@@ -1,70 +1,137 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
-import { books, doctor, images, publicationDetails, socialInitiatives } from "@/content/site";
+import {
+  doctor,
+  fullProfileSections,
+  images,
+  publicationDetails,
+  socialInitiatives,
+} from "@/content/site";
 import { CountUp } from "@/components/count-up";
 import { ExpandablePanel } from "@/components/expandable-panel";
 import { Reveal } from "@/components/reveal";
-import { IconBook, IconFacebook, IconHeart, IconInstagram, IconUsers } from "@/components/icons";
+import {
+  IconBook,
+  IconFacebook,
+  IconGeneral,
+  IconHeart,
+  IconInstagram,
+  IconLaparoscopic,
+  IconUsers,
+} from "@/components/icons";
+
+const timelineIcons = [IconBook, IconHeart, IconUsers, IconLaparoscopic] as const;
+
+const isMajorAchievement = (item: string) =>
+  item.includes("Overall University Topper") ||
+  item.includes("Gold Medalist") ||
+  item.includes("1st Rank") ||
+  item.includes("2nd Rank");
 
 export function Education() {
-  const [openBook, setOpenBook] = useState<string | null>(null);
-
   return (
     <section
-      className="living-section depth-light section-pad"
+      className="living-section education-editorial section-pad"
       aria-labelledby="education-heading"
     >
-      <div className="container-site grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14">
-        <Reveal className="order-2 section-head lg:order-1">
-          <p className="eyebrow">Medical education & public impact</p>
-          <h2 id="education-heading" className="heading-display heading-xl">
-            Founder and Chief of The White Army
-          </h2>
-          <p className="lede">
-            Founder and Chief of The White Army - Free Online Medical Education platform
-            for more than 3 Lakh members all over the country and abroad.
-          </p>
-          <div className="motion-card mt-6 rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-5 sm:p-6">
-            <div className="flex items-start gap-3">
-              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-soft text-red">
-                <IconUsers className="h-5 w-5" />
-              </span>
-              <div>
-                <p className="text-2xl font-semibold tracking-tight text-navy">
-                  <CountUp value={3} suffix="Lakh+" decimals={0} />
-                </p>
-                <p className="mt-1 text-sm text-ink-muted">
-                  members all over the country and abroad on The White Army.
-                </p>
-              </div>
-            </div>
+      <div className="education-timeline-chapter">
+        <div className="container-site">
+          <Reveal className="education-timeline-head">
+            <p className="eyebrow">Education & accomplishments</p>
+            <h2 id="education-heading" className="heading-display heading-xl">
+              Training, academic distinctions and public work.
+            </h2>
+          </Reveal>
+
+          <div className="education-timeline" aria-label="Education and accomplishments timeline">
+            {fullProfileSections.map((section, index) => {
+              const Icon = timelineIcons[index] ?? IconGeneral;
+
+              return (
+                <Reveal
+                  key={section.title}
+                  as="article"
+                  delay={(Math.min(index, 2) + 1) as 1 | 2 | 3}
+                  className="education-timeline__group"
+                >
+                  <div className="education-timeline__marker">
+                    <Icon className="h-7 w-7" aria-hidden />
+                  </div>
+                  <div className="education-timeline__content">
+                    <p className="education-timeline__label">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3>{section.title}</h3>
+                    <ul>
+                      {section.items.map((item) => (
+                        <li
+                          key={item}
+                          className={isMajorAchievement(item) ? "is-major-achievement" : undefined}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
-          <div className="mt-4 flex justify-center">
-            <div className="relative aspect-square w-full max-w-[13rem] overflow-hidden rounded-full border border-[color:var(--line)] bg-white p-2 shadow-[0_10px_26px_rgba(11,28,51,0.04)] sm:max-w-[14rem]">
+        </div>
+      </div>
+
+      <div className="education-public-impact-chapter">
+        <div className="container-site education-editorial__grid">
+          <Reveal delay={2} className="education-editorial__copy section-head">
+            <div className="white-army-mark">
               <Image
                 src={images.whiteArmy.src}
                 alt={images.whiteArmy.alt}
                 fill
-                sizes="224px"
-                className="p-1 object-contain"
+                sizes="160px"
+                className="object-contain"
               />
             </div>
-          </div>
-          <p className="mt-5 text-base leading-relaxed text-ink-muted">
-            As a Career Counsellor and Motivational Mentor, he also guides students under the
-            public education identity{" "}
-            <span className="font-semibold text-navy">{doctor.social.handle}</span>,
-            a name used only in this educational and social-media context.
-          </p>
-          <ExpandablePanel className="mt-6" label="Know more">
-            <div className="grid gap-4 rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-5 sm:p-6">
+
+            <div>
+              <p className="eyebrow">Medical education & public impact</p>
+              <h2 id="white-army-heading" className="heading-display heading-xl">
+                Founder and Chief of The White Army
+              </h2>
+              <p className="lede">
+                Founder and Chief of The White Army - Free Online Medical Education platform
+                for more than 3 Lakh members all over the country and abroad.
+              </p>
+            </div>
+
+            <div className="education-proof">
+              <span className="education-proof__icon">
+                <IconUsers className="h-5 w-5" aria-hidden />
+              </span>
               <div>
-                <h3 className="text-base font-semibold text-navy">
+                <p>
+                  <CountUp value={3} suffix="Lakh+" decimals={0} />
+                </p>
+                <span>members all over the country and abroad on The White Army.</span>
+              </div>
+            </div>
+
+            <p className="education-public-impact-copy">
+              As a Career Counsellor and Motivational Mentor, he also guides students under the
+              public education identity{" "}
+              <span>{doctor.social.handle}</span>,
+              a name used only in this educational and social-media context.
+            </p>
+
+            <ExpandablePanel
+              className="mt-2"
+              controlsClassName="expandable-trigger--on-dark"
+              label="Know more"
+            >
+              <div className="education-profile-panel">
+                <h3 className="text-base font-semibold">
                   Education, mentoring and social presence
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                <p className="mt-2 text-sm leading-relaxed">
                   The White Army supports free medical education. Dr. Kishan Rao also gives
                   motivational, career counseling and exam preparation guidance talks in
                   various schools and colleges.
@@ -74,172 +141,78 @@ export function Education() {
                     href={doctor.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-secondary"
+                    className="btn btn-ghost"
                   >
-                    <IconInstagram className="social-icon-motion h-4 w-4" />
+                    <IconInstagram className="social-icon-motion h-4 w-4" aria-hidden />
                     Instagram
                   </a>
                   <a
                     href={doctor.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-secondary"
+                    className="btn btn-ghost"
                   >
-                    <IconFacebook className="social-icon-motion h-4 w-4" />
+                    <IconFacebook className="social-icon-motion h-4 w-4" aria-hidden />
                     Facebook
                   </a>
                 </div>
-              </div>
 
-              <div className="grid gap-3 sm:grid-cols-3">
-                {books.map((book) => {
-                  const hasDetails = book.details.length > 0;
-                  const actionLabel = "actionLabel" in book ? book.actionLabel : null;
-                  const isOpen = openBook === book.title;
-                  const detailsId = `education-publication-${book.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-
-                  return (
-                    <article
-                      key={book.title}
-                      className={`flex h-full flex-col overflow-hidden rounded-[var(--radius-sm)] bg-surface ${
-                        "coverPending" in book && book.coverPending ? "p-4" : ""
-                      }`}
-                    >
-                      {hasDetails && actionLabel ? (
-                        <>
-                          <button
-                            type="button"
-                            className="group flex h-full cursor-pointer flex-col text-left transition-colors duration-150 hover:bg-blue-soft/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
-                            aria-expanded={isOpen}
-                            aria-controls={detailsId}
-                            onClick={() =>
-                              setOpenBook((current) =>
-                                current === book.title ? null : book.title,
-                              )
-                            }
-                          >
-                            <div className="relative aspect-[3/4] bg-navy/5">
-                              <Image
-                                src={book.coverImage}
-                                alt={book.coverAlt}
-                                fill
-                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
-                                className="object-contain"
-                                style={{ objectPosition: book.objectPosition }}
-                              />
-                            </div>
-                            <div className="flex flex-1 flex-col p-4">
-                              <IconBook className="h-5 w-5 text-blue" aria-hidden />
-                              <h4 className="mt-3 text-sm font-semibold text-navy group-hover:text-blue">
-                                {book.title}
-                              </h4>
-                              <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
-                                {book.note}
-                              </p>
-                              <span className="mt-4 text-sm font-semibold text-blue">
-                                {actionLabel}
-                              </span>
-                            </div>
-                          </button>
-                          {isOpen ? (
-                            <div
-                              id={detailsId}
-                              className="m-3 mt-0 rounded-[var(--radius-sm)] bg-blue-soft/55 p-3 text-sm leading-relaxed text-ink-muted"
-                            >
-                              {book.details.map((detail) => (
-                                <p key={detail} className="mt-2 first:mt-0">
-                                  {detail}
-                                </p>
-                              ))}
-                            </div>
-                          ) : null}
-                        </>
-                      ) : "coverPending" in book && book.coverPending ? (
-                        <div className="flex flex-1 flex-col">
-                          <IconBook className="h-5 w-5 text-blue" aria-hidden />
-                          <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
+                <div className="education-detail-grid">
+                  <div>
+                    <h4 className="text-sm font-semibold">Publication details</h4>
+                    <ul className="mt-3 grid gap-2">
+                      {publicationDetails.map((item) => (
+                        <li key={item} className="flex gap-2 text-sm leading-relaxed">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" aria-hidden />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold">Social initiatives</h4>
+                    <div className="mt-3 grid gap-3">
+                      {socialInitiatives.map((item) => (
+                        <div key={item.name}>
+                          <p className="text-sm font-semibold">{item.name}</p>
+                          <p className="mt-1 text-sm leading-relaxed">
+                            {item.description}
+                          </p>
                         </div>
-                      ) : (
-                        <>
-                          <div className="relative aspect-[3/4] bg-navy/5">
-                            <Image
-                              src={book.coverImage}
-                              alt={book.coverAlt}
-                              fill
-                              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 16rem"
-                              className="object-contain"
-                              style={{ objectPosition: book.objectPosition }}
-                            />
-                          </div>
-                          <div className="flex flex-1 flex-col p-4">
-                            <IconBook className="h-5 w-5 text-blue" aria-hidden />
-                            <h4 className="mt-3 text-sm font-semibold text-navy">{book.title}</h4>
-                            <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-muted">
-                              {book.note}
-                            </p>
-                          </div>
-                        </>
-                      )}
-                    </article>
-                  );
-                })}
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
+            </ExpandablePanel>
+          </Reveal>
 
-              <div className="rounded-[var(--radius-sm)] bg-blue-soft/55 p-4">
-                <h4 className="text-sm font-semibold text-navy">Publication details</h4>
-                <ul className="mt-3 grid gap-2">
-                  {publicationDetails.map((item) => (
-                    <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink-muted">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue" aria-hidden />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-2">
-                {socialInitiatives.map((item) => (
-                  <article key={item.name} className="rounded-[var(--radius-sm)] bg-red-soft/55 p-4">
-                    <IconHeart className="h-5 w-5 text-red" aria-hidden />
-                    <h4 className="mt-3 text-sm font-semibold text-navy">{item.name}</h4>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-muted">{item.description}</p>
-                    {item.details.length > 0 ? (
-                      <ul className="mt-3 grid gap-2">
-                        {item.details.map((detail) => (
-                          <li key={detail} className="flex gap-2 text-sm leading-relaxed text-ink-muted">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red" aria-hidden />
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </article>
-                ))}
-              </div>
-            </div>
-          </ExpandablePanel>
-        </Reveal>
-
-        <Reveal variant="image" delay={2} className="order-1 lg:order-2">
-          <div className="image-mask relative mx-auto max-w-md overflow-hidden rounded-[1.25rem] border border-[color:var(--line)] bg-navy shadow-[var(--shadow)] lg:max-w-none">
-            <div className="relative aspect-[4/5]">
+          <Reveal variant="image" className="education-editorial__media">
+            <figure className="education-portrait-field">
+              <Image
+                src={images.education.src}
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 92vw, 38vw"
+                quality={75}
+                className="education-portrait-field__backdrop"
+                aria-hidden
+              />
               <Image
                 src={images.education.src}
                 alt={images.education.alt}
                 fill
-                sizes="(max-width: 1024px) 90vw, 40vw"
+                sizes="(max-width: 1024px) 92vw, 38vw"
                 quality={90}
-                className="object-cover"
-                style={{ objectPosition: "center 18%" }}
+                className="education-portrait-field__image"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-            </div>
-            <div className="absolute inset-x-0 bottom-0 p-5">
-              <p className="text-sm font-medium text-white/85">Educator · Mentor · Author</p>
-              <p className="mt-1 text-lg font-semibold text-white">{doctor.name}</p>
-            </div>
-          </div>
-        </Reveal>
+              <figcaption>
+                <span>Educator - Mentor - Author</span>
+                <strong>{doctor.name}</strong>
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

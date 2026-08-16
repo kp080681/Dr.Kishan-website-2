@@ -16,13 +16,13 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)_minmax(0,0.9fr)]">
           <div>
             <div className="flex items-center gap-4">
-              <span className="flex h-[58px] w-[58px] shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/[0.04] p-1.5 sm:h-[64px] sm:w-[64px]">
+              <span className="flex h-[58px] w-[58px] shrink-0 items-center justify-center rounded-full border border-[color:rgba(216,166,79,0.42)] bg-[color:rgba(4,13,35,0.72)] p-1.5 sm:h-[64px] sm:w-[64px]">
                 <span className="block h-full w-full">
                   <BrandLogo sizes="96px" />
                 </span>
               </span>
               <div>
-                <p className="text-lg font-semibold">{doctor.name}</p>
+                <p className="text-lg font-semibold">{doctor.brandName}</p>
                 <p className="mt-1 text-sm text-white/75">{doctor.primaryRole}</p>
                 <p className="mt-2 text-sm text-white/65">{doctor.credentials}</p>
               </div>
@@ -123,7 +123,7 @@ export function Footer() {
             decisions. Surgical suitability and outcomes vary by patient.
           </p>
           <p className="mt-4 text-xs text-white/45">
-            © {new Date().getFullYear()} {doctor.name}. All rights reserved.
+            © {new Date().getFullYear()} {doctor.brandName}. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-white/40">
             Developed by{" "}

@@ -54,11 +54,11 @@ export function Gallery() {
       key={item.src}
       as="figure"
       delay={(Math.min(index, 2) + 1) as 1 | 2 | 3}
-      className="gallery-depth group flex h-full min-h-0 flex-col overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-white"
+      className={`gallery-editorial-tile gallery-editorial-tile--${getGalleryVariant(index)} group`}
     >
       <button
         type="button"
-        className="gallery-tile-button image-mask relative block aspect-[4/3] w-full shrink-0 bg-navy"
+        className="gallery-tile-button gallery-editorial-tile__button relative block w-full shrink-0"
         onClick={() => openAt(item)}
         aria-label={`Open gallery image: ${item.label}`}
       >
@@ -68,20 +68,24 @@ export function Gallery() {
           fill
           sizes={sizes}
           quality={92}
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+          className="gallery-editorial-tile__image transition-transform duration-500 group-hover:scale-[1.025]"
           style={{ objectPosition: item.objectPosition }}
         />
       </button>
-      <figcaption className="flex min-h-[4.25rem] items-center px-4 py-3 text-sm font-semibold leading-snug text-navy sm:px-5">
+      <figcaption className="gallery-editorial-tile__caption">
         {item.label}
       </figcaption>
     </Reveal>
   );
 
   return (
-    <section id="gallery" className="living-section section-pad" aria-labelledby="gallery-heading">
+    <section
+      id="gallery"
+      className="gallery-editorial-section section-pad"
+      aria-labelledby="gallery-heading"
+    >
       <div className="container-site">
-        <Reveal className="section-head">
+        <Reveal className="section-head gallery-editorial-head">
           <p className="eyebrow">Gallery</p>
           <h2 id="gallery-heading" className="heading-display heading-xl">
             A closer look at clinical and professional life
@@ -91,7 +95,7 @@ export function Gallery() {
           </p>
         </Reveal>
 
-        <div className="section-content grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="section-content gallery-editorial-grid">
           {visibleItems.map((item, index) =>
             renderTile(
               item,
@@ -101,11 +105,11 @@ export function Gallery() {
           )}
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="gallery-editorial-actions">
           {hasMoreItems ? (
             <button
               type="button"
-              className="expandable-trigger"
+              className="expandable-trigger expandable-trigger--on-dark"
               onClick={() =>
                 setVisibleCount((count) => Math.min(count + GALLERY_BATCH_SIZE, galleryItems.length))
               }
@@ -119,7 +123,7 @@ export function Gallery() {
           {visibleCount > INITIAL_GALLERY_COUNT ? (
             <button
               type="button"
-              className="expandable-trigger"
+              className="expandable-trigger expandable-trigger--on-dark"
               onClick={() => setVisibleCount(INITIAL_GALLERY_COUNT)}
             >
               <span>Show fewer</span>
@@ -128,7 +132,7 @@ export function Gallery() {
               </span>
             </button>
           ) : null}
-          <p className="text-sm font-medium text-ink-muted" aria-live="polite">
+          <p className="text-sm font-medium text-white/60" aria-live="polite">
             Showing {visibleItems.length} of {galleryItems.length}
           </p>
         </div>
@@ -201,4 +205,9 @@ export function Gallery() {
       ) : null}
     </section>
   );
+}
+
+function getGalleryVariant(index: number) {
+  const variants = ["feature", "wide", "tall", "wide", "compact", "compact", "wide", "compact"];
+  return variants[index % variants.length];
 }
