@@ -1,0 +1,11 @@
+{
+  "graph_version": 1,
+  "current_node": "SEO_AUDIT",
+  "status": "READY",
+  "approved_nodes": [],
+  "failed_gate": null,
+  "last_run_summary": "SEO graph initialized. Website design is locked. SEO work cannot redesign approved sections or rewrite approved medical/client content without explicit authorization.",
+  "website_design_locked": true,
+  "approved_content_locked": true,
+  "content_change_requires_explicit_authorization": true
+}
