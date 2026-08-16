@@ -3,11 +3,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlogIndex } from "@/lib/blogs";
 import { SiteShell } from "@/components/site-shell";
+import { defaultOgImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Blogs",
+  title: {
+    absolute: "Patient Education Articles | Dr. Kishan Rao",
+  },
   description:
-    "Educational surgical articles by Dr. Kishan Rao for patients and learners.",
+    "Patient education articles by Dr. Kishan Rao on hernia, hemorrhoids, varicose veins, day care surgery and choosing a doctor.",
+  alternates: {
+    canonical: "/blogs",
+  },
+  openGraph: {
+    title: "Patient Education Articles | Dr. Kishan Rao",
+    description:
+      "Patient education articles on hernia, hemorrhoids, varicose veins, day care surgery and choosing a doctor.",
+    url: "/blogs",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary",
+    title: "Patient Education Articles | Dr. Kishan Rao",
+    description:
+      "Patient education articles on hernia, hemorrhoids, varicose veins, day care surgery and choosing a doctor.",
+    images: [defaultOgImage.url],
+  },
 };
 
 export default function BlogsIndexPage() {
@@ -37,7 +58,7 @@ export default function BlogsIndexPage() {
                 <div className="relative aspect-[16/10] shrink-0 overflow-hidden">
                   <Image
                     src={post.featuredImage}
-                    alt=""
+                    alt={post.featuredImageAlt ?? post.title}
                     fill
                     className="object-cover"
                     style={{ objectPosition: getFeaturedImagePosition(post.featuredImage) }}

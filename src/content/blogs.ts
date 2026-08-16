@@ -23,6 +23,7 @@ export type BlogPost = {
   publishedAt: string | null;
   category: string | null;
   featuredImage: string;
+  featuredImageAlt?: string;
   author: string;
   updatedAt: string | null;
   oldSlug: string;

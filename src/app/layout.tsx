@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { JsonLd } from "@/components/json-ld";
+import { createGlobalSchema } from "@/lib/schema";
+import { defaultOgImage, siteName, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -10,27 +13,38 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: {
-    default: "Dr. Kishan Rao | General, Laparoscopic & LASER Surgeon",
+    default: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
     template: "%s | Dr. Kishan Rao",
   },
   description:
-    "Consult Dr. Kishan Rao — MBBS (BMC), MS (Gold Medalist), FMAS, DMAS — for general, laparoscopic and LASER surgical care across Mangalore and Dakshina Kannada.",
+    "Consult Dr. Kishan Rao Balila for general, laparoscopic and LASER surgical care across Mangaluru, Mangalore and Dakshina Kannada.",
   keywords: [
     "Dr. Kishan Rao",
+    "Dr. Kishan Rao Balila",
     "General Surgeon Mangalore",
     "Laparoscopic Surgeon",
     "LASER Surgery",
     "AJ Hospital",
     "Puttur",
   ],
-  authors: [{ name: "Dr. Kishan Rao" }],
+  authors: [{ name: "Dr. Kishan Rao Balila" }],
   openGraph: {
-    title: "Dr. Kishan Rao | General, Laparoscopic & LASER Surgeon",
+    title: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
     description:
-      "Patient-first surgical consultations in Mangalore, Ayyanakatte and Puttur. Book by call or WhatsApp.",
+      "General, laparoscopic and LASER surgical consultations across Mangaluru, Mangalore and Dakshina Kannada.",
+    siteName,
     type: "website",
     locale: "en_IN",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary",
+    title: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    description:
+      "General, laparoscopic and LASER surgical consultations across Mangaluru, Mangalore and Dakshina Kannada.",
+    images: [defaultOgImage.url],
   },
   robots: {
     index: true,
@@ -50,6 +64,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const globalSchema = createGlobalSchema();
+
   return (
     <html
       lang="en-IN"
@@ -63,6 +79,7 @@ export default function RootLayout({
               '(function(){try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("motion-ready");}}catch(e){}})();',
           }}
         />
+        <JsonLd data={globalSchema} />
         {children}
       </body>
     </html>

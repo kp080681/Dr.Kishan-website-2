@@ -67,6 +67,7 @@ export function getBlogIndex(): BlogIndexItem[] {
       publishedAt: post.publishedAt,
       category: post.category,
       featuredImage: post.featuredImage,
+      featuredImageAlt: "featuredImageAlt" in post ? post.featuredImageAlt : undefined,
       author: post.author,
       updatedAt: post.updatedAt,
       oldSlug: post.oldSlug,

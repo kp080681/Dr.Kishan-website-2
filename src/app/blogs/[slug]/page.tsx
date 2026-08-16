@@ -2,12 +2,30 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { getBlogPost, getBlogSlugs, renderBlogMarkdown } from "@/lib/blogs";
 import { doctor } from "@/content/site";
 import { IconPhone, IconWhatsApp } from "@/components/icons";
+import { createArticleSchema, createBreadcrumbSchema } from "@/lib/schema";
+import { canonicalPath } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
+
+const relatedConditionByBlogSlug: Record<string, { href: string; label: string }> = {
+  "laser-treatment-varicose-veins": {
+    href: "/conditions/varicose-veins",
+    label: "Varicose Veins",
+  },
+  "how-to-manage-a-hernia": {
+    href: "/conditions/hernia",
+    label: "Hernia",
+  },
+  "how-to-prevent-hemorrhoids": {
+    href: "/conditions/piles-hemorrhoids",
+    label: "Piles (Hemorrhoids)",
+  },
+};
 
 function isOldBookingHeading(text: string) {
   const normalized = text
@@ -33,12 +51,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return { title: "Blog" };
+  const title = post.seoTitle ?? post.title;
+  const description = post.metaDescription ?? post.summary;
+  const canonical = canonicalPath(`/blogs/${post.slug}`);
+  const imageAlt = post.featuredImageAlt ?? post.title;
+
   return {
-    title: post.seoTitle ?? post.title,
-    description: post.metaDescription ?? post.summary,
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
     openGraph: {
-      title: post.openGraphTitle ?? post.seoTitle ?? post.title,
-      description: post.openGraphDescription ?? post.metaDescription ?? post.summary,
+      title: post.openGraphTitle ?? title,
+      description: post.openGraphDescription ?? description,
+      url: canonical,
+      type: "article",
+      publishedTime: post.publishedAt ?? undefined,
+      modifiedTime: post.updatedAt ?? undefined,
+      authors: [post.author],
+      images: [
+        {
+          url: post.featuredImage,
+          alt: imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [post.featuredImage],
     },
   };
 }
@@ -53,9 +96,18 @@ export default async function BlogPostPage({ params }: Props) {
   const featuredImagePosition = post.featuredImage.startsWith("/images/gallery/originals/")
     ? "center top"
     : "center";
+  const articleSchema = createArticleSchema(post);
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Blogs", item: "/blogs" },
+    { name: post.title, item: `/blogs/${post.slug}` },
+  ]);
+  const relatedCondition = relatedConditionByBlogSlug[post.slug];
 
   return (
     <SiteShell>
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <article className="section-pad pt-[calc(var(--header-h)+2rem)]">
         <div className="container-site grid gap-10 lg:grid-cols-[minmax(0,1fr)_17rem]">
           <div>
@@ -75,7 +127,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[var(--radius)] border border-[color:var(--line)] bg-surface">
               <Image
                 src={post.featuredImage}
-                alt=""
+                alt={post.featuredImageAlt ?? post.title}
                 fill
                 priority
                 className="object-cover"
@@ -142,6 +194,14 @@ export default async function BlogPostPage({ params }: Props) {
               <Link href="/blogs" className="mt-5 inline-block text-sm font-semibold text-blue">
                 All blogs
               </Link>
+              {relatedCondition ? (
+                <Link
+                  href={relatedCondition.href}
+                  className="mt-3 block text-sm font-semibold text-blue hover:underline"
+                >
+                  Related condition: {relatedCondition.label}
+                </Link>
+              ) : null}
             </div>
           </aside>
         </div>

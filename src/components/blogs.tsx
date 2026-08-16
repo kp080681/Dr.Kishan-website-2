@@ -60,7 +60,7 @@ export function Blogs() {
               <div className="blog-editorial-card__media relative">
                 <Image
                   src={editorialImages[post.slug] ?? post.featuredImage}
-                  alt=""
+                  alt={post.featuredImageAlt ?? post.title}
                   fill
                   className="transition duration-500 group-hover:scale-[1.035]"
                   sizes={
