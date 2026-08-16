@@ -29,7 +29,7 @@ export function About() {
               </p>
               <p className="lede">
                 Dr. Kishan Rao is a highly experienced and respected surgeon with more than
-                7 years of experience in the surgical field.
+                10 years of experience in the surgical field.
               </p>
               <p className="lede">
                 He is extremely empathetic to his patients, treating them like family, and
