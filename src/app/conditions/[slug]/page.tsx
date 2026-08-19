@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { SiteShell } from "@/components/site-shell";
 import { conditionPages, getConditionBySlug } from "@/content/conditions";
@@ -11,6 +12,11 @@ import { defaultOgImage } from "@/lib/seo";
 
 type ConditionPageProps = {
   params: Promise<{ slug: string }>;
+};
+
+const conditionRedirects: Record<string, string> = {
+  "varicose-veins-evla": "varicose-veins",
+  "hernia-surgery": "hernia",
 };
 
 const conditionSeo: Record<
@@ -122,19 +128,11 @@ const relatedArticleByConditionSlug: Partial<
     href: "/blogs/laser-treatment-varicose-veins",
     label: "Read patient article on laser treatment for varicose veins",
   },
-  "varicose-veins-evla": {
-    href: "/blogs/laser-treatment-varicose-veins",
-    label: "Read patient article on laser treatment for varicose veins",
-  },
   "piles-hemorrhoids": {
     href: "/blogs/how-to-prevent-hemorrhoids",
     label: "Read patient article on hemorrhoid prevention",
   },
   hernia: {
-    href: "/blogs/how-to-manage-a-hernia",
-    label: "Read patient article on managing a hernia",
-  },
-  "hernia-surgery": {
     href: "/blogs/how-to-manage-a-hernia",
     label: "Read patient article on managing a hernia",
   },
@@ -184,6 +182,12 @@ export async function generateMetadata({ params }: ConditionPageProps): Promise<
 
 export default async function ConditionPage({ params }: ConditionPageProps) {
   const { slug } = await params;
+  const redirectSlug = conditionRedirects[slug];
+
+  if (redirectSlug) {
+    redirect(`/conditions/${redirectSlug}`);
+  }
+
   const condition = getConditionBySlug(slug);
 
   if (!condition) {
@@ -200,31 +204,31 @@ export default async function ConditionPage({ params }: ConditionPageProps) {
   return (
     <SiteShell>
       <JsonLd data={breadcrumbSchema} />
-      <section className="section-pad pt-[calc(var(--header-h)+2rem)]" aria-labelledby="condition-heading">
+      <section className="condition-page" aria-labelledby="condition-heading">
         <div className="container-site">
           <Link
             href="/#services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue"
+            className="condition-back-link"
           >
             <IconArrow className="h-4 w-4 rotate-180" aria-hidden />
             Back to services
           </Link>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,0.3fr)] lg:gap-12">
-            <div>
+          <div className="condition-hero">
+            <div className="condition-hero__copy">
               <p className="eyebrow">{condition.category}</p>
               <h1 id="condition-heading" className="heading-display heading-hero mt-3">
                 {condition.name}
               </h1>
-              <p className="lede mt-5">{condition.definition}</p>
-              <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-muted">
+              <p className="condition-hero__lede mt-5">{condition.definition}</p>
+              <p className="condition-hero__note mt-5">
                 This page explains what the term means. It is not a diagnosis, treatment
                 recommendation or substitute for an individual medical consultation.
               </p>
               {relatedArticle ? (
                 <Link
                   href={relatedArticle.href}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue hover:underline"
+                  className="condition-related-link"
                 >
                   {relatedArticle.label}
                   <IconArrow className="h-4 w-4" aria-hidden />
@@ -232,29 +236,57 @@ export default async function ConditionPage({ params }: ConditionPageProps) {
               ) : null}
             </div>
 
-            <aside className="rounded-[var(--radius)] border border-[color:var(--line)] bg-white p-5 shadow-[0_10px_30px_rgba(11,28,51,0.04)]">
-              <h2 className="text-base font-semibold text-navy">Consultation</h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Patients can consult Dr. Kishan Rao with prior appointment.
-              </p>
-              <div className="mt-5 grid gap-3">
-                <a href={`tel:${doctor.phoneTel}`} className="btn btn-primary">
-                  <IconPhone className="h-4 w-4" aria-hidden />
-                  Call
-                </a>
-                <a
-                  href={doctor.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-accent"
-                >
-                  <IconWhatsApp className="h-5 w-5" aria-hidden />
-                  WhatsApp
-                </a>
-                <Link href="/#consultation" className="btn btn-secondary">
-                  <IconCalendar className="h-4 w-4" aria-hidden />
-                  View locations
-                </Link>
+            <div className="condition-visual">
+              <Image
+                src={condition.image.src}
+                alt={condition.image.alt}
+                fill
+                sizes="(max-width: 1023px) 92vw, 42vw"
+                quality={88}
+                priority
+                className="condition-visual__image"
+                style={{ objectPosition: condition.image.objectPosition }}
+              />
+            </div>
+          </div>
+
+          <div className="condition-body">
+            <div className="condition-article">
+              <div className="condition-sections mt-10">
+                {condition.sections.map((section) => (
+                  <section key={section.title} className="condition-section">
+                    <h2 className="heading-display heading-card">{section.title}</h2>
+                    <p>{section.body}</p>
+                  </section>
+                ))}
+              </div>
+            </div>
+
+            <aside className="condition-aside">
+              <div className="condition-consult">
+                <h2>Consultation</h2>
+                <p>
+                  Patients can consult Dr. Kishan Rao with prior appointment.
+                </p>
+                <div className="condition-consult__actions">
+                  <a href={`tel:${doctor.phoneTel}`} className="btn btn-primary">
+                    <IconPhone className="h-4 w-4" aria-hidden />
+                    Call
+                  </a>
+                  <a
+                    href={doctor.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-accent"
+                  >
+                    <IconWhatsApp className="h-5 w-5" aria-hidden />
+                    WhatsApp
+                  </a>
+                  <Link href="/#consultation" className="btn btn-secondary">
+                    <IconCalendar className="h-4 w-4" aria-hidden />
+                    View locations
+                  </Link>
+                </div>
               </div>
             </aside>
           </div>

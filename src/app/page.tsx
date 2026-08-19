@@ -12,24 +12,24 @@ import { Gallery } from "@/components/gallery";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
-import { Philosophy } from "@/components/philosophy";
 import { Services } from "@/components/services";
 import { defaultOgImage } from "@/lib/seo";
 import { Testimonials } from "@/components/testimonials";
+import { WhyChoose } from "@/components/why-choose";
 
 const homeDescription =
-  "Consult Dr. Kishan Rao Balila for general, laparoscopic and LASER surgical care across Mangaluru, Mangalore, Puttur, Sullia and Dakshina Kannada.";
+  "Consult Dr. Kishan Rao for general, laparoscopic and Advanced LASER surgical care across Mangalore, Puttur, Sullia and Dakshina Kannada.";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    absolute: "Dr. Kishan Rao | Laparoscopic Surgeon in Mangalore",
   },
   description: homeDescription,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    title: "Dr. Kishan Rao | Laparoscopic Surgeon in Mangalore",
     description: homeDescription,
     url: "/",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    title: "Dr. Kishan Rao | Laparoscopic Surgeon in Mangalore",
     description: homeDescription,
     images: [defaultOgImage.url],
   },
@@ -51,12 +51,12 @@ export default function HomePage() {
         <Hero />
         <CredibilityCounters />
         <Services />
-        <Locations />
         <About />
-        <Philosophy />
+        <WhyChoose />
+        <Locations />
         <Education />
-        <Books />
         <Testimonials />
+        <Books />
         <Gallery />
         <Faqs />
         <Blogs />

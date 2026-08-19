@@ -15,23 +15,22 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    default: "Dr. Kishan Rao | Laparoscopic Surgeon in Mangalore",
     template: "%s | Dr. Kishan Rao",
   },
   description:
-    "Consult Dr. Kishan Rao Balila for general, laparoscopic and LASER surgical care across Mangaluru, Mangalore and Dakshina Kannada.",
+    "Consult Dr. Kishan Rao for general, laparoscopic and Advanced LASER surgical care across Mangalore, Puttur, Sullia and Dakshina Kannada.",
   keywords: [
     "Dr. Kishan Rao",
-    "Dr. Kishan Rao Balila",
     "General Surgeon Mangalore",
     "Laparoscopic Surgeon",
     "LASER Surgery",
     "AJ Hospital",
     "Puttur",
   ],
-  authors: [{ name: "Dr. Kishan Rao Balila" }],
+  authors: [{ name: "Dr. Kishan Rao" }],
   openGraph: {
-    title: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    title: "Dr. Kishan Rao | Laparoscopic Surgeon in Mangalore",
     description:
       "General, laparoscopic and LASER surgical consultations across Mangaluru, Mangalore and Dakshina Kannada.",
     siteName,
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Dr. Kishan Rao Balila | General, Laparoscopic & LASER Surgeon",
+    title: "Dr. Kishan Rao | Laparoscopic Surgeon in Mangalore",
     description:
       "General, laparoscopic and LASER surgical consultations across Mangaluru, Mangalore and Dakshina Kannada.",
     images: [defaultOgImage.url],
@@ -52,10 +51,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/brand/dr-kishan-rao-balila-favicon.png", sizes: "64x64", type: "image/png" },
-      { url: "/images/brand/dr-kishan-rao-balila-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/brand/dr-kishan-rao-favicon.png", sizes: "64x64", type: "image/png" },
+      { url: "/images/brand/dr-kishan-rao-icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: [{ url: "/images/brand/dr-kishan-rao-balila-apple-touch.png", sizes: "180x180" }],
+    apple: [{ url: "/images/brand/dr-kishan-rao-apple-touch.png", sizes: "180x180" }],
   },
 };
 

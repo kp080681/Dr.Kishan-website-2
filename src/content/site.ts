@@ -2,9 +2,9 @@ import { originalGalleryItems } from "./gallery-originals";
 
 export const doctor = {
   name: "Dr. Kishan Rao",
-  brandName: "Dr. Kishan Rao Balila",
+  brandName: "Dr. Kishan Rao",
   credentials: "MBBS (BMC), MS (Gold Medalist), FMAS, DMAS",
-  primaryRole: "General, Laparoscopic and LASER Surgeon",
+  primaryRole: "Laparoscopic Surgeon",
   secondaryRoles: ["Career Counsellor and Motivational Mentor"] as const,
   phoneDisplay: "+91 81052 32787",
   phoneTel: "+918105232787",
@@ -25,7 +25,7 @@ export const navItems = [
   { label: "Consultation", href: "/#consultation" },
   { label: "Testimonials", href: "/#testimonials" },
   { label: "Gallery", href: "/#gallery" },
-  { label: "Blogs", href: "/#blogs" },
+  { label: "From Dr. Kishan", href: "/#blogs" },
 ] as const;
 
 export type LocationStatus = "scheduled" | "visiting";
@@ -36,7 +36,7 @@ export const locations = [
     name: "AJ Hospital",
     place: "Mangaluru",
     address: "NH-66, Kuntikana, Mangaluru, Karnataka 575004",
-    schedule: "Monday to Friday, 9:00 AM to 10:00 AM",
+    schedule: "Monday to Friday · 9:00 AM–10:00 AM",
     status: "scheduled" as LocationStatus,
   },
   {
@@ -44,15 +44,15 @@ export const locations = [
     name: "Bhat's Nursing Home",
     place: "Mangaluru",
     address: "7th Cross, Gandhinagar, Mangaluru, Karnataka 575003",
-    schedule: "Monday to Friday, 10:00 AM to 1:00 PM",
+    schedule: "Monday to Friday · 10:00 AM–1:00 PM",
     status: "scheduled" as LocationStatus,
   },
   {
     id: "namma",
-    name: "Namma Arogyadhama Multi-speciality Medical Center",
+    name: "Namma Arogyadhama – Multispeciality Medical Centre",
     place: "Ayyanakatte near Bellare, Sullia Taluk",
-    address: "Ground Floor, Gokula Complex, Ayyanakatte, near Bellare, Sullia, Karnataka 574212",
-    schedule: "Sunday, 9:00 AM to 5:00 PM",
+    address: "Ayyanakatte, near Bellare, Sullia Taluk",
+    schedule: "Sunday · 9:00 AM–5:00 PM",
     status: "scheduled" as LocationStatus,
   },
   {
@@ -60,7 +60,7 @@ export const locations = [
     name: "Adarsha Hospital",
     place: "Puttur",
     address: "APMC Road, Bolwar, Puttur, Karnataka 574201",
-    schedule: "Saturday, 11:00 AM",
+    schedule: "Saturday · 11:00 AM",
     status: "scheduled" as LocationStatus,
   },
   {
@@ -94,7 +94,7 @@ export const services = [
     id: "laser",
     title: "LASER SURGERY",
     procedures: [
-      "Varicose Veins (EVLA)",
+      "Varicose Veins",
       "Piles (Hemorrhoids)",
       "Fissure",
       "Fistula",
@@ -122,7 +122,7 @@ export const services = [
     id: "general",
     title: "GENERAL SURGERY",
     procedures: [
-      "Hernia Surgery",
+      "Hernia",
       "Breast Surgery",
       "Thyroid Surgery",
       "Circumcision",
@@ -136,17 +136,6 @@ export const services = [
     imageWidth: 864,
     imageHeight: 1280,
     href: "/#services",
-  },
-  {
-    id: "varicose",
-    title: "VARICOSE VEINS",
-    procedures: ["Varicose Veins"],
-    image: "/images/gallery/outdoor-portrait.jpg",
-    imageAlt: "Dr. Kishan Rao in a white coat portrait",
-    imagePosition: "50% 0%",
-    imageWidth: 1181,
-    imageHeight: 1536,
-    href: "/conditions/varicose-veins",
   },
 ] as const;
 
@@ -266,7 +255,7 @@ export const philosophyPoints = [
 export const books = [
   {
     title: "Language of Healthcare",
-    note: "Chief Editor and Publisher of Language of Healthcare books.",
+    note: "Chief Editor and Publisher",
     actionLabel: "View book",
     coverImage: "/images/books/language-of-healthcare-cover.webp",
     coverAlt: "Language of Healthcare English-Kannada Phrase Book cover",
@@ -279,7 +268,7 @@ export const books = [
   },
   {
     title: "Surgery Simplified for Students",
-    note: "Author of Surgery Simplified for Students book.",
+    note: "Author",
     actionLabel: "Know more",
     coverImage: "/images/books/surgery-simplified-for-students-cover.webp",
     coverAlt: "Surgery Simplified for Students book cover",
@@ -291,7 +280,7 @@ export const books = [
   },
   {
     title: "All in 1 Case Proformas",
-    note: "Structured case documentation for clinical training",
+    note: "Author",
     actionLabel: "View book",
     coverImage: "/images/books/all-in-1-clinical-case-proformas-cover.webp",
     coverAlt: "All in 1 Clinical Case Proformas book cover",
@@ -488,25 +477,25 @@ export const images = {
     alt: "Dr. Kishan Rao in the operation theatre",
   },
   logo: {
-    src: "/images/brand/dr-kishan-rao-balila-symbol.png",
-    alt: "Dr. Kishan Rao Balila logo",
+    src: "/images/brand/dr-kishan-rao-symbol.png",
+    alt: "Dr. Kishan Rao logo",
     width: 1024,
     height: 1024,
   },
   logoLockup: {
-    src: "/images/brand/dr-kishan-rao-balila-horizontal-lockup.png",
-    alt: "Dr. Kishan Rao Balila logo lockup",
+    src: "/images/brand/dr-kishan-rao-horizontal-lockup.png",
+    alt: "Dr. Kishan Rao logo lockup",
     width: 1045,
     height: 725,
   },
   favicon: {
-    src: "/images/brand/dr-kishan-rao-balila-favicon.png",
+    src: "/images/brand/dr-kishan-rao-favicon.png",
   },
   appleIcon: {
-    src: "/images/brand/dr-kishan-rao-balila-apple-touch.png",
+    src: "/images/brand/dr-kishan-rao-apple-touch.png",
   },
   appIcon: {
-    src: "/images/brand/dr-kishan-rao-balila-icon-192.png",
+    src: "/images/brand/dr-kishan-rao-icon-192.png",
   },
   /** Held back until consent is confirmed for all identifiable people */
   patientConsultation: {

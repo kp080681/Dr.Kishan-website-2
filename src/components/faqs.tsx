@@ -12,11 +12,11 @@ export function Faqs() {
         <Reveal className="section-head faq-editorial-head">
           <p className="eyebrow">Patient FAQs</p>
           <h2 id="faqs-heading" className="heading-display heading-xl max-w-3xl">
-            Simple answers to common surgical terms
+            Questions patients often ask
           </h2>
           <p className="lede">
-            These answers explain what the terms mean. A consultation is needed for advice
-            about an individual condition.
+            Clear answers to common questions about surgical conditions, consultations and
+            treatment.
           </p>
         </Reveal>
 

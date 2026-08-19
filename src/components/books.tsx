@@ -32,11 +32,11 @@ export function Books() {
         <Reveal className="section-head books-section__head">
           <p className="eyebrow">Books & publications</p>
           <h2 id="books-heading" className="heading-display heading-xl">
-            Written for learners who want clarity
+            Medical education beyond the consultation room
           </h2>
           <p className="lede">
-            Dr. Kishan Rao&apos;s educational publications support students and healthcare
-            communication.
+            Books and healthcare communication work connected to Dr. Kishan Rao&apos;s teaching
+            and public education initiatives.
           </p>
         </Reveal>
 

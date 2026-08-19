@@ -1,16 +1,7 @@
 import Image from "next/image";
-import {
-  aboutMilestones,
-  doctor,
-  fullProfileSections,
-  images,
-  philosophyPoints,
-} from "@/content/site";
+import { fullProfileSections, images } from "@/content/site";
 import { ExpandablePanel } from "@/components/expandable-panel";
-import { IconBook, IconHeart, IconLaparoscopic, IconUsers } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
-
-const whyChooseIcons = [IconLaparoscopic, IconHeart, IconUsers, IconBook] as const;
 
 export function About() {
   return (
@@ -18,14 +9,14 @@ export function About() {
       <div className="about-chapter__navy">
         <div className="container-site about-editorial">
           <div className="about-editorial__grid">
-          <Reveal className="about-editorial__copy section-head">
+          <Reveal className="about-editorial__copy about-editorial__copy--intro section-head">
             <div>
               <p className="eyebrow">About Dr. Kishan Rao</p>
               <h2 id="about-heading" className="heading-display heading-xl">
-                Surgical training, clinical clarity and patient-friendly communication.
+                About Dr. Kishan Rao
               </h2>
-              <p className="text-[length:var(--text-support)] font-semibold text-red">
-                {doctor.credentials}
+              <p className="about-editorial__statement">
+                Surgery guided by experience, empathy and responsibility.
               </p>
               <p className="lede">
                 Dr. Kishan Rao is a highly experienced and respected surgeon with more than
@@ -33,18 +24,42 @@ export function About() {
               </p>
               <p className="lede">
                 He is extremely empathetic to his patients, treating them like family, and
-                always has the highest professional integrity and ethical standards.
+                always maintains high professional integrity and ethical standards.
               </p>
+            </div>
+          </Reveal>
+
+          <Reveal variant="image" className="about-editorial__media">
+            <div className="about-portrait-frame">
+              <Image
+                src={images.about.src}
+                alt={images.about.alt}
+                fill
+                sizes="(max-width: 1024px) 90vw, 38vw"
+                quality={90}
+                className="about-portrait-image"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal className="about-editorial__copy about-editorial__copy--detail">
+            <div className="about-editorial__detail-copy">
               <p className="lede">
-                He specializes in General Surgery, Laparoscopy and Emergency Surgery and
-                performs a variety of basic and advanced surgeries. He has a strong interest
-                in utilizing the latest technology and advancements in surgical care to provide
-                the best outcomes for his patients.
+                He specializes in General Surgery, Laparoscopic Surgery and Advanced LASER
+                Surgery, and performs a wide range of basic and advanced surgical procedures.
+                He has a strong interest in using newer technology and advances in surgical
+                care to support safe, appropriate treatment for his patients.
               </p>
               <p className="lede">
                 He is passionate about teaching and is a faculty member at the medical college.
-                Dr. Rao is a dedicated and skilled surgeon who is highly regarded for his
-                unwavering commitment to providing the highest quality care to his patients.
+              </p>
+              <p className="lede">
+                Dr. Kishan Rao is a dedicated surgeon committed to providing high-quality care
+                with clarity, compassion and responsible clinical decision-making.
+              </p>
+              <p className="text-[length:var(--text-support)] font-semibold text-red">
+                Dr. Kishan Rao MBBS, MS, FMAS, DMAS Consultant General, Laparoscopic &amp;
+                LASER Surgeon Assistant Professor at AJ Medical College, Mangalore.
               </p>
             </div>
 
@@ -72,57 +87,8 @@ export function About() {
               </div>
             </ExpandablePanel>
           </Reveal>
-
-          <Reveal variant="image" className="about-editorial__media">
-            <div className="about-portrait-frame">
-              <Image
-                src={images.about.src}
-                alt={images.about.alt}
-                fill
-                sizes="(max-width: 1024px) 90vw, 38vw"
-                quality={90}
-                className="about-portrait-image"
-              />
-            </div>
-          </Reveal>
-
-          <Reveal className="about-milestones" aria-label="Training and accomplishments">
-            {aboutMilestones.map((item) => (
-              <article key={item.title} className="about-milestone">
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </article>
-            ))}
-          </Reveal>
           </div>
         </div>
-      </div>
-
-      <div className="about-chapter__ivory">
-        <Reveal className="container-site why-choose-editorial">
-          <div>
-            <p className="eyebrow">Why choose Dr. Kishan Rao</p>
-            <h3 className="heading-display heading-lg mt-3">
-              Care built around diagnosis, explanation and ethical decision-making.
-            </h3>
-          </div>
-          <div className="why-choose-editorial__list">
-            {philosophyPoints.slice(0, 4).map((point, index) => (
-              <article key={point.title} className="why-choose-item">
-                <span className="why-choose-item__icon" aria-hidden>
-                  {(() => {
-                    const Icon = whyChooseIcons[index] ?? IconHeart;
-                    return <Icon className="h-8 w-8" />;
-                  })()}
-                </span>
-                <div>
-                  <h4 className="text-base font-semibold text-navy">{point.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{point.detail}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   );

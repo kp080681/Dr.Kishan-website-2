@@ -25,23 +25,24 @@ export function Hero() {
 
       <div className="container-site relative grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 xl:gap-16">
         <Reveal className="hero-sequence hero-cinematic__content max-w-2xl">
-          <p className="eyebrow">Consultations in Mangalore &amp; Dakshina Kannada</p>
+          <p className="eyebrow">Consultations in Mangalore</p>
           <h1 id="hero-heading" className="heading-display heading-hero mt-3">
             {doctor.name}
           </h1>
           <div className="hero-credentials mt-5">
             <p className="hero-credentials__item hero-credentials__item--primary">
-              {doctor.credentials}
+              MBBS (BMC) &middot; MS (Gold Medalist) &middot; FMAS &middot; DMAS
             </p>
-            <p className="hero-credentials__item">General, Laparoscopic Surgeon in Mangalore</p>
+            <p className="hero-credentials__item">Laparoscopic Surgeon in Mangalore</p>
+            <p className="hero-credentials__item hero-credentials__item--accent">
+              Advanced LASER Surgery
+            </p>
           </div>
           <p className="heading-display heading-md mt-6 text-navy-soft">
             Surgical care with clear guidance from first consultation to recovery.
           </p>
           <p className="lede mt-4">
-            Patients across Mangalore, Puttur and Sullia can consult Dr. Kishan Rao for
-            general, laparoscopic and LASER surgical concerns. Patients can consult with prior
-            appointment.
+            Consultations available by prior appointment across Mangalore, Puttur and Sullia.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
@@ -59,10 +60,6 @@ export function Hero() {
               WhatsApp
             </a>
           </div>
-
-          <p className="mt-6 max-w-xl text-sm font-medium leading-relaxed text-ink-muted">
-            Consultation locations and timings are listed below for easy patient planning.
-          </p>
         </Reveal>
       </div>
     </section>

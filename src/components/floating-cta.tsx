@@ -11,7 +11,7 @@ export function FloatingCta() {
   useEffect(() => {
     const readingZones = Array.from(
       document.querySelectorAll(
-        "#services, #testimonials, .education-public-impact-chapter, .books-section, #faqs",
+        ".credibility-strip, #services, [aria-labelledby=\"why-choose-heading\"], #about, #testimonials, .education-public-impact-chapter, .books-section, #faqs, .final-consult-cta",
       ),
     );
     if (readingZones.length === 0) return;

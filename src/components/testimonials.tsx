@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { googleReviews } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 import { IconArrow } from "@/components/icons";
@@ -8,6 +9,16 @@ import { IconArrow } from "@/components/icons";
 export function Testimonials() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [carouselHeight, setCarouselHeight] = useState<number>();
+
+  const measureReviewHeight = useCallback((slide: HTMLElement, viewport: HTMLElement) => {
+    const viewportStyles = window.getComputedStyle(viewport);
+    const verticalPadding =
+      Number.parseFloat(viewportStyles.paddingTop) +
+      Number.parseFloat(viewportStyles.paddingBottom);
+
+    return Math.ceil(slide.getBoundingClientRect().height + verticalPadding + 4);
+  }, []);
 
   const scrollToReview = (index: number) => {
     const nextIndex = (index + googleReviews.length) % googleReviews.length;
@@ -17,6 +28,9 @@ export function Testimonials() {
     );
 
     setCarouselIndex(nextIndex);
+    if (viewport && nextSlide) {
+      setCarouselHeight(measureReviewHeight(nextSlide, viewport));
+    }
     nextSlide?.scrollIntoView({
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
       block: "nearest",
@@ -47,6 +61,12 @@ export function Testimonials() {
         );
 
         setCarouselIndex(closest.index);
+        const activeSlide = slides.find(
+          (slide) => Number(slide.dataset.reviewIndex) === closest.index,
+        );
+        if (activeSlide) {
+          setCarouselHeight(measureReviewHeight(activeSlide, viewport));
+        }
       });
     };
 
@@ -57,7 +77,29 @@ export function Testimonials() {
       window.cancelAnimationFrame(frame);
       viewport.removeEventListener("scroll", updateActiveSlide);
     };
-  }, []);
+  }, [measureReviewHeight]);
+
+  useEffect(() => {
+    const viewport = carouselRef.current;
+    const activeSlide = viewport?.querySelector<HTMLElement>(
+      `[data-review-index="${carouselIndex}"]`,
+    );
+    if (!viewport || !activeSlide) return;
+
+    const updateHeight = () => {
+      setCarouselHeight(measureReviewHeight(activeSlide, viewport));
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(activeSlide);
+    window.addEventListener("resize", updateHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, [carouselIndex, measureReviewHeight]);
 
   return (
     <section
@@ -70,9 +112,11 @@ export function Testimonials() {
           <Reveal className="section-head patient-experience-intro">
             <p className="eyebrow">Testimonials</p>
             <h2 id="testimonials-heading" className="heading-display heading-xl">
-              What patients and families say
+              What patients say
             </h2>
-            <p className="lede">Google reviews shared by patients and their families.</p>
+            <p className="lede">
+              Google reviews and earlier patient feedback shared about Dr. Kishan Rao&apos;s care.
+            </p>
           </Reveal>
 
           <div className="review-carousel" aria-label="Google reviews">
@@ -98,6 +142,11 @@ export function Testimonials() {
             <div
               ref={carouselRef}
               className="review-carousel__viewport"
+              style={
+                carouselHeight
+                  ? ({ "--review-active-height": `${carouselHeight}px` } as CSSProperties)
+                  : undefined
+              }
               tabIndex={0}
               role="region"
               aria-label="Swipe or use arrow buttons to browse Google reviews"
@@ -122,7 +171,11 @@ export function Testimonials() {
                     delay={(Math.min(index, 2) + 1) as 1 | 2 | 3}
                     className="review-carousel__slide testimonial-motion"
                   >
-                    <div className="review-carousel__card" data-review-index={index}>
+                    <div
+                      className="review-carousel__card"
+                      data-review-index={index}
+                      data-active={carouselIndex === index ? "true" : undefined}
+                    >
                       <span className="review-carousel__quote-mark" aria-hidden>
                         &ldquo;
                       </span>

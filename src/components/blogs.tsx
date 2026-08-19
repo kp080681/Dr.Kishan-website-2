@@ -33,13 +33,12 @@ export function Blogs() {
       <div className="container-site">
         <div className="blogs-editorial-layout">
           <Reveal className="section-head blogs-editorial-head">
-          <p className="eyebrow">Blogs</p>
+          <p className="eyebrow">From Dr. Kishan</p>
           <h2 id="blogs-heading" className="heading-display heading-xl">
-            Educational topics for patients and learners
+            Patient education in simple language
           </h2>
           <p className="lede">
-            Clear patient-education articles on surgical conditions, treatment options and
-            recovery.
+            Clear, patient-friendly reading on common surgical conditions and treatment options.
           </p>
             <Link href="/blogs" className="blogs-editorial-view-all">
               View all articles

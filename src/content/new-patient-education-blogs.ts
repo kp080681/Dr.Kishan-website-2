@@ -590,7 +590,7 @@ EVLA may be suitable for patients with symptomatic varicose veins caused by veno
 
 EVLA may not be suitable for every patient. Factors such as vein anatomy, previous vein procedures, clotting history, skin changes, infection, pregnancy, severe medical conditions or other circulation problems may influence treatment choice.
 
-Some patients may need additional treatments such as sclerotherapy, phlebectomy, compression therapy, wound care or staged procedures. A good plan is tailored to the patient's vein pattern and symptoms.
+Some patients may need additional treatments such as phlebectomy, compression therapy, wound care or staged procedures. A good plan is tailored to the patient's vein pattern and symptoms.
 
 ## What happens after the procedure?
 

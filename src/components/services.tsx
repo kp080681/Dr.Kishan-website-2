@@ -39,7 +39,7 @@ const icons = {
 type ProcedureName = (typeof services)[number]["procedures"][number];
 
 const conditionIconMap: Record<ProcedureName, ConditionIconVariant> = {
-  "Varicose Veins (EVLA)": "leg-vein",
+  "Varicose Veins": "leg-vein",
   "Piles (Hemorrhoids)": "colorectal",
   Fissure: "fissure",
   Fistula: "fistula",
@@ -47,14 +47,12 @@ const conditionIconMap: Record<ProcedureName, ConditionIconVariant> = {
   "Gallbladder Stones": "gallbladder",
   Appendix: "appendix",
   Hernia: "hernia",
-  "Hernia Surgery": "hernia-surgery",
   "Breast Surgery": "breast",
   "Thyroid Surgery": "thyroid",
   Circumcision: "circumcision",
   "Diabetic Foot & Ulcer Care": "foot",
   "Minor Surgical Procedures": "procedure",
   "Emergency Surgery": "emergency",
-  "Varicose Veins": "vein",
 };
 
 function ConditionIcon({ variant }: { variant: ConditionIconVariant }) {
@@ -281,12 +279,8 @@ export function Services() {
         <Reveal className="section-head treatments-section__head">
           <p className="eyebrow">Treatments</p>
           <h2 id="services-heading" className="heading-display heading-xl max-w-3xl">
-            Surgical concerns explained clearly before the next step
+            Advanced surgical care, explained clearly.
           </h2>
-          <p className="lede">
-            The main services are listed in plain language so patients can identify the
-            broad area of concern before booking a consultation.
-          </p>
         </Reveal>
 
         <div className="section-content treatments-journey">

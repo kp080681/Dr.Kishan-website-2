@@ -88,10 +88,10 @@ export function Gallery() {
         <Reveal className="section-head gallery-editorial-head">
           <p className="eyebrow">Gallery</p>
           <h2 id="gallery-heading" className="heading-display heading-xl">
-            A closer look at clinical and professional life
+            A surgeon&apos;s journey
           </h2>
           <p className="lede">
-            A curated preview from clinical, teaching and public-service moments.
+            Clinical Practice &middot; Medical Education &middot; Community
           </p>
         </Reveal>
 
